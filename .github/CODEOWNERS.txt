@@ -1,0 +1,9 @@
+# Esta linha é um comentário
+# Atribui a responsabilidade sobre todo o código ao usuário @username
+* @username
+
+# Atribui a responsabilidade sobre um diretório específico a um usuário
+/docs/ @docs-team
+
+# Atribui a responsabilidade sobre arquivos específicos a uma equipe
+*.js @frontend-team
