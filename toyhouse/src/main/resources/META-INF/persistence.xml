@@ -1,0 +1,28 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+
+             version="2.2">
+
+    <persistence-unit name="meuPU" transaction-type="RESOURCE_LOCAL">
+        <!-- Definindo a ordem de criação das tabelas no JPA para evitar exceções. -->
+        <class>toyhouse.domain.Endereco.Estado</class>
+        <class>toyhouse.domain.Endereco.Cidade</class>
+        <class>toyhouse.domain.Endereco.Bairro</class>
+        <class>toyhouse.domain.Endereco.Logradouro</class>
+        <class>toyhouse.domain.Endereco.Cep</class>
+        <properties>
+            <!-- Conexão com o banco de dados -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/toyhouse"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="patinhosz27"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+
+            <!-- Configurações do Hibernate -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/> <!-- create -->
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

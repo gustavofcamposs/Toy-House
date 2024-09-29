@@ -1,0 +1,9 @@
+toyhouse\domain\Endereco\Cep.class
+toyhouse\domain\Pessoa\Funcionario.class
+toyhouse\domain\Pessoa\Pessoa.class
+toyhouse\domain\Endereco\Estado.class
+toyhouse\domain\Endereco\Bairro.class
+toyhouse\domain\Endereco\Logradouro.class
+toyhouse\domain\JpaContextListener.class
+toyhouse\domain\Endereco\Cidade.class
+toyhouse\domain\Pessoa\Cliente.class
