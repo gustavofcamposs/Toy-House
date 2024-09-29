@@ -11,7 +11,6 @@ import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
 
-
 @WebServlet("/estado") // Mapeamento da URL do controlador
 public class EstadoController extends HttpServlet {
 
