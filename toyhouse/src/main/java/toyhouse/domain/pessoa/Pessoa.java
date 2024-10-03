@@ -1,33 +1,43 @@
 package toyhouse.domain.pessoa;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import toyhouse.domain.Endereco.Bairro;
-import toyhouse.domain.Endereco.Cep;
-import toyhouse.domain.Endereco.Logradouro;
 
+import jakarta.persistence.*;
+import lombok.*;
+import toyhouse.domain.endereco.Bairro;
+import toyhouse.domain.endereco.Cep;
+import toyhouse.domain.endereco.Logradouro;
+
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS) // ou outro tipo de herança
 public class Pessoa {
 
-
     @Id
-    private Long id;
+    private Long pessoaId;
 
+    @NonNull
+    @Column(length = 12, unique = true) // Exp: 468133365/75
     private String cpf;
 
+    @NonNull
+    @Column(length = 12) // Exp: 11 942019665
     private String telefone;
 
 
-    @OneToOne
-    @JoinColumn(name = "id_bairro")
-    private Bairro bairro;
-
-    @OneToOne
-    @JoinColumn(name = "id_cep")
+    @ManyToOne
+    @JoinColumn(name = "id_cep", referencedColumnName = "cep")
     private Cep cep;
 
-    @OneToOne
-    @JoinColumn(name = "id_logradouro")
+    @ManyToOne
+    @JoinColumn(name = "id_bairro", referencedColumnName = "id")
+    private Bairro bairro;
+
+    @ManyToOne
+    @JoinColumn(name = "id_logradouro", referencedColumnName = "id")
     private Logradouro logradouro;
 
 }

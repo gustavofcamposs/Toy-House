@@ -7,7 +7,7 @@
 
   <servlet>
     <servlet-name>EstadoController</servlet-name>
-    <servlet-class>toyhouse.domain.controller.EstadoController</servlet-class>
+    <servlet-class>toyhouse.controller.EstadoController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>EstadoController</servlet-name>
