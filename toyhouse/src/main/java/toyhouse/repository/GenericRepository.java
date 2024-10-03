@@ -1,4 +1,4 @@
-package toyhouse.domain.repository;
+package toyhouse.repository;
 
 
 import jakarta.persistence.EntityManager;

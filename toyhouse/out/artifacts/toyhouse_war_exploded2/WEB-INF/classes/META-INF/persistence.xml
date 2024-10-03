@@ -6,11 +6,11 @@
 
     <persistence-unit name="meuPU" transaction-type="RESOURCE_LOCAL">
         <!-- Definindo a ordem de criação das tabelas no JPA para evitar exceções. -->
-        <class>toyhouse.domain.Endereco.Estado</class>
-        <class>toyhouse.domain.Endereco.Cidade</class>
-        <class>toyhouse.domain.Endereco.Bairro</class>
-        <class>toyhouse.domain.Endereco.Logradouro</class>
-        <class>toyhouse.domain.Endereco.Cep</class>
+        <class>toyhouse.domain.endereco.Estado</class>
+        <class>toyhouse.domain.endereco.Cidade</class>
+        <class>toyhouse.domain.endereco.Bairro</class>
+        <class>toyhouse.domain.endereco.Logradouro</class>
+        <class>toyhouse.domain.endereco.Cep</class>
         <properties>
             <!-- Conexão com o banco de dados -->
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/toyhouse"/>
