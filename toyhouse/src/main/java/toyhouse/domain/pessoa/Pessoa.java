@@ -40,4 +40,9 @@ public class Pessoa {
     @JoinColumn(name = "id_logradouro", referencedColumnName = "id")
     private Logradouro logradouro;
 
+    @Column(length = 35)
+    private String complemento;
+
+    private int numero;
+
 }
