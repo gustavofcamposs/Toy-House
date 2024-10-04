@@ -22,9 +22,4 @@ public class Logradouro {
     @Column(length = 50)
     private String nome;
 
-    private int numero;
-
-    @Column(length = 35)
-    private String complemento;
-
 }

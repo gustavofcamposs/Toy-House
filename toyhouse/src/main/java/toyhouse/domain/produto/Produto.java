@@ -24,9 +24,4 @@ public class Produto {
     @Column(length = 60)
     private String nome;
 
-    @ManyToOne
-    @JoinColumn(name = "id_imagemProduto", referencedColumnName = "id")
-    private ImagemProduto imagemProduto;
-
-
 }
