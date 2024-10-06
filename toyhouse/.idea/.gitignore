@@ -6,3 +6,9 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+# Ignorar configurações da IDE
+.idea/
+
+# Ignorar a pasta target (gerada pelo Maven ou outra build tool)
+target/
