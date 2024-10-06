@@ -7,6 +7,8 @@ import toyhouse.domain.endereco.Bairro;
 import toyhouse.domain.endereco.Cep;
 import toyhouse.domain.endereco.Logradouro;
 
+import java.util.Date;
+
 
 @Getter
 @Setter
@@ -18,6 +20,13 @@ public class Pessoa {
 
     @Id
     private Long pessoaId;
+
+    @NonNull
+    @Column(length = 50)
+    private String nome;
+
+    @NonNull
+    private Date dataNascimento;
 
     @NonNull
     @Column(length = 12, unique = true) // Exp: 468133365/75

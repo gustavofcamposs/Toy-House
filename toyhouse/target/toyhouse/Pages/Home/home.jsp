@@ -22,7 +22,7 @@
 <header class="header" id="header">
     <nav class="nav_header">
         <!-- Logotipo com link para a página inicial -->
-        <a href="${pageContext.request.contextPath}/" class="logo">
+        <a href="${pageContext.request.contextPath}/Pages/Home/home.jsp" class="logo">
             <img class="imagem" src="<%= request.getContextPath() %>/Images/Home/ToyHouseLogo.jpg" alt="Logotipo da ToyHouse">
         </a>
 
@@ -49,7 +49,7 @@
         </div>
 
         <ul class="itens_nav">
-            <li><a href="../testee">Cadastrar</a></li>
+            <li><a href="Pages/CadastroCliente/cadastroCliente.jsp">Cadastrar</a></li>
             <li><a href="../testee">Login</a></li>
         </ul>
     </nav>
