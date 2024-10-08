@@ -24,6 +24,9 @@ html{
 
 
 /* Menu Hamburguer */
+#hamburguer {
+    display: none; /* O menu fica escondido */
+}
 .container_menu_hamburguer{
     display: none;
     position: absolute;
