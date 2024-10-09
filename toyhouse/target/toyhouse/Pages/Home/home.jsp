@@ -50,7 +50,6 @@
 
         <ul class="itens_nav">
             <li><a href="Pages/CadastroCliente/cadastroCliente.jsp">Cadastrar</a></li>
-            <li><a href="../testee">Login</a></li>
         </ul>
     </nav>
 </header>
