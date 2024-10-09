@@ -1,0 +1,117 @@
+/*  Telas extra grandes */
+
+
+/*@media(min-width: 1800px){
+    .header{
+        background-color: yellow;
+    }
+
+    .container_formulario{
+        width: 40rem;
+    }
+}*/
+
+
+
+
+/* Desktops */
+
+/*@media (min-width: 1200px) AND (max-width:1799px){
+
+    .header{
+        background-color: red;
+    }
+
+
+}*/
+
+
+/* Tablets/notebooks grandes */
+
+@media (min-width: 970px) AND (max-width: 1199px){
+
+    .container_formulario{
+        margin-top: -3%;
+    }
+
+}
+
+
+
+
+/* Tablets pequenos */
+
+@media (min-width: 720px) AND (max-width: 970px){
+
+    .container_formulario{
+        margin-top: -6.4%;
+    }
+
+}
+
+
+/*  Dispositivos menores e uma parte do Mobile*/
+/*O logo será exibido dentro do forms*/
+@media (min-width: 590px) AND (max-width: 720px){
+
+    .container_botao{
+        margin-top: -4%;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .container_formulario{
+        margin-top: -6%;
+
+        & .logo_formulario{
+            display: flex;
+        }
+    }
+}
+
+
+/* A partir de telas menores que esse media o forms irá cobrir 100% da tela*/
+@media (max-width: 590px){
+
+    .container_botao{
+        margin-top: 0;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .header{
+        display: none;
+    }
+
+    .container{
+        height: 140vh;
+    }
+
+    .container_formulario{
+        max-width: 95%;
+        height: 100%;
+
+        & .logo_formulario{
+            display: flex;
+        }
+
+    }
+
+
+    .wave-group{
+        width: 90%;
+
+        & .input{
+            width: 100%;
+        }
+    }
+
+
+    .container_botao{
+        max-height: 6%;
+    }
+}

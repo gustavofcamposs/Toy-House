@@ -24,4 +24,13 @@ public class Produto {
     @Column(length = 60)
     private String nome;
 
+    @NonNull
+    private String descricao;
+
+    @NonNull
+    private double preco;
+
+    @NonNull
+    private int quantidade;
+
 }
