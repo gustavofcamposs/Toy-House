@@ -17,7 +17,7 @@ public class Estado{
 
     @NonNull
     @Column(length = 35)
-    private String nome;
+    private String Nome;
 
 
 }

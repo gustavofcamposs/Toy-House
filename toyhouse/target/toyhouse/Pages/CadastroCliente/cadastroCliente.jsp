@@ -14,222 +14,228 @@
 </head>
 <body>
 
-<header class="header">
-    <div class="header_container">
-        <div class="logo">
-            <a href="/toyhouse_war/"> <!-- Link para a página inicial -->
-                <img class="imagem" src="<%= request.getContextPath() %>/Images/Home/ToyHouseLogo.jpg" alt="Logotipo ToyHouse">
-            </a>
+    <header class="header">
+        <div class="header_container">
+            <div class="logo">
+                <a href="/toyhouse_war/"> <!-- Link para a página inicial -->
+                    <img class="imagem" src="<%= request.getContextPath() %>/Images/Home/ToyHouseLogo.jpg" alt="Logotipo ToyHouse">
+                </a>
+            </div>
         </div>
-    </div>
-</header>
-<div class="container">
-    <div class="container_formulario">
-        <div class="logo_formulario">
-            <a href="/toyhouse_war/"><img class="imagem" src="<%= request.getContextPath() %>/Images/Home/ToyHouseLogo.jpg" alt="Logotipo ToyHouse"></a>
-        </div>
-        <div class="titulo">
-            <h1>Criar uma conta</h1>
-        </div>
-        <div class="container_inputs">
-
-            <div class="wave-group">
-                <input class="input" type="text" required="" />
-                <span class="bar"></span>
-                <label class="label">
-                    <span style="--index: 0" class="label-char">N</span>
-                    <span style="--index: 1" class="label-char">o</span>
-                    <span style="--index: 2" class="label-char">m</span>
-                    <span style="--index: 3" class="label-char">e</span>
-                    <span style="--index: 3" class="label-char"></span>
-                    <span style="--index: 3" class="label-char"></span>
-                    <span style="--index: 3" class="label-char"></span>
-                </label>
+    </header>
+    <div class="container">
+        <div class="container_formulario">
+            <div class="logo_formulario">
+                <a href="/toyhouse_war/"><img class="imagem" src="<%= request.getContextPath() %>/Images/Home/ToyHouseLogo.jpg" alt="Logotipo ToyHouse"></a>
             </div>
-
-
-            <div class="wave-group">
-                <input class="input" type="email" required="" />
-                <span class="bar"></span>
-                <label class="label">
-                    <span style="--index: 0" class="label-char">E</span>
-                    <span style="--index: 1" class="label-char">-</span>
-                    <span style="--index: 2" class="label-char">m</span>
-                    <span style="--index: 3" class="label-char">a</span>
-                    <span style="--index: 3" class="label-char">i</span>
-                    <span style="--index: 3" class="label-char">l</span>
-                    <span style="--index: 3" class="label-char"></span>
-                </label>
+            <div class="titulo">
+                <h1>Criar uma conta</h1>
             </div>
+            <div class="container_inputs">
 
-            <div class="wave-group">
-                <input class="input" type="password" required="" />
-                <span class="bar"></span>
-                <label class="label">
-                    <span style="--index: 0" class="label-char">S</span>
-                    <span style="--index: 1" class="label-char">e</span>
-                    <span style="--index: 2" class="label-char">n</span>
-                    <span style="--index: 3" class="label-char">h</span>
-                    <span style="--index: 3" class="label-char">a</span>
-                    <span style="--index: 3" class="label-char"></span>
-                    <span style="--index: 3" class="label-char"></span>
-                </label>
+                <div class="wave-group">
+                    <input class="input" type="text" name = "nome" required ="" />
+
+                    <span class="bar"></span>
+                    <label class="label">
+                        <span style="--index: 0" class="label-char">N</span>
+                        <span style="--index: 1" class="label-char">o</span>
+                        <span style="--index: 2" class="label-char">m</span>
+                        <span style="--index: 3" class="label-char">e</span>
+                        <span style="--index: 3" class="label-char"></span>
+                        <span style="--index: 3" class="label-char"></span>
+                        <span style="--index: 3" class="label-char"></span>
+                    </label>
+                </div>
+
+
+                <div class="wave-group">
+                    <input class="input" type="email" name = "email" required="" />
+                    <span class="bar"></span>
+                    <label class="label">
+                        <span style="--index: 0" class="label-char">E</span>
+                        <span style="--index: 1" class="label-char">-</span>
+                        <span style="--index: 2" class="label-char">m</span>
+                        <span style="--index: 3" class="label-char">a</span>
+                        <span style="--index: 3" class="label-char">i</span>
+                        <span style="--index: 3" class="label-char">l</span>
+                        <span style="--index: 3" class="label-char"></span>
+                    </label>
+                </div>
+
+                <div class="wave-group">
+                    <input class="input" type="password"   name = "senha" required="" />
+                    <span class="bar"></span>
+                    <label class="label">
+                        <span style="--index: 0" class="label-char">S</span>
+                        <span style="--index: 1" class="label-char">e</span>
+                        <span style="--index: 2" class="label-char">n</span>
+                        <span style="--index: 3" class="label-char">h</span>
+                        <span style="--index: 3" class="label-char">a</span>
+                        <span style="--index: 3" class="label-char"></span>
+                        <span style="--index: 3" class="label-char"></span>
+                    </label>
+                </div>
+
+                <div class="wave-group">
+                    <input class="input" type="password" name = "confirmar" required="" />
+                    <% String erroSenhaConfirmar = (String) request.getAttribute("erroSenhaConfirmar"); %>
+                    <% if (erroSenhaConfirmar != null) { %><p><%= erroSenhaConfirmar %></p><% } %>
+                    <span class="bar"></span>
+                    <label class="label">
+                        <span style="--index: 0" class="label-char">C</span>
+                        <span style="--index: 1" class="label-char">o</span>
+                        <span style="--index: 2" class="label-char">n</span>
+                        <span style="--index: 3" class="label-char">f</span>
+                        <span style="--index: 3" class="label-char">i</span>
+                        <span style="--index: 3" class="label-char">r</span>
+                        <span style="--index: 3" class="label-char">m</span>
+                        <span style="--index: 3" class="label-char">a</span>
+                        <span style="--index: 3" class="label-char">r</span>
+                    </label>
+                </div>
+
+
+                <div class="wave-group">
+                    <input class="input" type="text"  name = "cpf" required="" />
+                    <span class="bar"></span>
+                    <label class="label">
+                        <span style="--index: 0" class="label-char">C</span>
+                        <span style="--index: 1" class="label-char">P</span>
+                        <span style="--index: 2" class="label-char">F</span>
+                    </label>
+                </div>
+
+
+                <div class="wave-group">
+                    <input class="input" type="tel" name = "tel" required="" />
+                    <span class="bar"></span>
+                    <label class="label">
+                        <span style="--index: 0" class="label-char">T</span>
+                        <span style="--index: 1" class="label-char">e</span>
+                        <span style="--index: 2" class="label-char">l</span>
+                        <span style="--index: 3" class="label-char">e</span>
+                        <span style="--index: 3" class="label-char">f</span>
+                        <span style="--index: 3" class="label-char">o</span>
+                        <span style="--index: 3" class="label-char">n</span>
+                        <span style="--index: 3" class="label-char">e</span>
+                    </label>
+                </div>
+
+
+                <div class="wave-group">
+                    <input class="input" type="text"  name = "cep" required=""/>
+                    <span class="bar"></span>
+                    <label class="label">
+                        <span style="--index: 0" class="label-char">C</span>
+                        <span style="--index: 1" class="label-char">E</span>
+                        <span style="--index: 2" class="label-char">P</span>
+                    </label>
+                </div>
+
+                <div class="wave-group">
+                    <input class="input" type="text" required="" readonly/>
+                    <span class="bar"></span>
+                    <label class="label">
+                        <span style="--index: 0" class="label-char">B</span>
+                        <span style="--index: 1" class="label-char">a</span>
+                        <span style="--index: 2" class="label-char">i</span>
+                        <span style="--index: 3" class="label-char">r</span>
+                        <span style="--index: 3" class="label-char">r</span>
+                        <span style="--index: 3" class="label-char">o</span>
+                    </label>
+                </div>
+
+
+                <div class="wave-group">
+                    <input class="input" type="text" required="" readonly />
+                    <span class="bar"></span>
+                    <label class="label">
+                        <span style="--index: 0" class="label-char">L</span>
+                        <span style="--index: 1" class="label-char">o</span>
+                        <span style="--index: 2" class="label-char">g</span>
+                        <span style="--index: 3" class="label-char">r</span>
+                        <span style="--index: 3" class="label-char">a</span>
+                        <span style="--index: 3" class="label-char">d</span>
+                        <span style="--index: 3" class="label-char">o</span>
+                        <span style="--index: 3" class="label-char">u</span>
+                        <span style="--index: 3" class="label-char">r</span>
+                        <span style="--index: 3" class="label-char">o</span>
+                    </label>
+                </div>
+
+                <div class="wave-group">
+                    <input class="input" type="text" required="" readonly/>
+                    <span class="bar"></span>
+                    <label class="label">
+                        <span style="--index: 0" class="label-char">E</span>
+                        <span style="--index: 1" class="label-char">s</span>
+                        <span style="--index: 2" class="label-char">t</span>
+                        <span style="--index: 3" class="label-char">a</span>
+                        <span style="--index: 3" class="label-char">d</span>
+                        <span style="--index: 3" class="label-char">o</span>
+                    </label>
+                </div>
+
+                <div class="wave-group">
+                    <input class="input" type="text" required="" readonly/>
+                    <span class="bar"></span>
+                    <label class="label">
+                        <span style="--index: 0" class="label-char">C</span>
+                        <span style="--index: 1" class="label-char">i</span>
+                        <span style="--index: 2" class="label-char">d</span>
+                        <span style="--index: 3" class="label-char">a</span>
+                        <span style="--index: 3" class="label-char">d</span>
+                        <span style="--index: 3" class="label-char">e</span>
+                    </label>
+                </div>
+
+                <div class="wave-group">
+                    <input class="input" type="number"  name = "numero" required="" />
+                    <span class="bar"></span>
+                    <label class="label">
+                        <span style="--index: 0" class="label-char">N</span>
+                        <span style="--index: 1" class="label-char">°</span>
+                    </label>
+                </div>
+
+                <div class="wave-group">
+                    <input class="input" type="text" required="" />
+                    <span class="bar"></span>
+                    <label class="label">
+                        <span style="--index: 0" class="label-char">C</span>
+                        <span style="--index: 1" class="label-char">o</span>
+                        <span style="--index: 2" class="label-char">m</span>
+                        <span style="--index: 3" class="label-char">p</span>
+                        <span style="--index: 3" class="label-char">l</span>
+                        <span style="--index: 3" class="label-char">e</span>
+                        <span style="--index: 3" class="label-char">m</span>
+                        <span style="--index: 3" class="label-char">e</span>
+                        <span style="--index: 3" class="label-char">n</span>
+                        <span style="--index: 3" class="label-char">t</span>
+                        <span style="--index: 3" class="label-char">o</span>
+                    </label>
+                </div>
+
+
             </div>
+            <div class="container_botao">
 
-            <div class="wave-group">
-                <input class="input" type="password" required="" />
-                <span class="bar"></span>
-                <label class="label">
-                    <span style="--index: 0" class="label-char">C</span>
-                    <span style="--index: 1" class="label-char">o</span>
-                    <span style="--index: 2" class="label-char">n</span>
-                    <span style="--index: 3" class="label-char">f</span>
-                    <span style="--index: 3" class="label-char">i</span>
-                    <span style="--index: 3" class="label-char">r</span>
-                    <span style="--index: 3" class="label-char">m</span>
-                    <span style="--index: 3" class="label-char">a</span>
-                    <span style="--index: 3" class="label-char">r</span>
-                </label>
-            </div>
-
-
-            <div class="wave-group">
-                <input class="input" type="text" required="" />
-                <span class="bar"></span>
-                <label class="label">
-                    <span style="--index: 0" class="label-char">C</span>
-                    <span style="--index: 1" class="label-char">P</span>
-                    <span style="--index: 2" class="label-char">F</span>
-                </label>
-            </div>
-
-
-            <div class="wave-group">
-                <input class="input" type="tel" required="" />
-                <span class="bar"></span>
-                <label class="label">
-                    <span style="--index: 0" class="label-char">T</span>
-                    <span style="--index: 1" class="label-char">e</span>
-                    <span style="--index: 2" class="label-char">l</span>
-                    <span style="--index: 3" class="label-char">e</span>
-                    <span style="--index: 3" class="label-char">f</span>
-                    <span style="--index: 3" class="label-char">o</span>
-                    <span style="--index: 3" class="label-char">n</span>
-                    <span style="--index: 3" class="label-char">e</span>
-                </label>
-            </div>
-
-
-            <div class="wave-group">
-                <input class="input" type="text"/>
-                <span class="bar"></span>
-                <label class="label">
-                    <span style="--index: 0" class="label-char">C</span>
-                    <span style="--index: 1" class="label-char">E</span>
-                    <span style="--index: 2" class="label-char">P</span>
-                </label>
-            </div>
-
-            <div class="wave-group">
-                <input class="input" type="text" required="" readonly/>
-                <span class="bar"></span>
-                <label class="label">
-                    <span style="--index: 0" class="label-char">B</span>
-                    <span style="--index: 1" class="label-char">a</span>
-                    <span style="--index: 2" class="label-char">i</span>
-                    <span style="--index: 3" class="label-char">r</span>
-                    <span style="--index: 3" class="label-char">r</span>
-                    <span style="--index: 3" class="label-char">o</span>
-                </label>
-            </div>
-
-
-            <div class="wave-group">
-                <input class="input" type="text" required="" readonly />
-                <span class="bar"></span>
-                <label class="label">
-                    <span style="--index: 0" class="label-char">L</span>
-                    <span style="--index: 1" class="label-char">o</span>
-                    <span style="--index: 2" class="label-char">g</span>
-                    <span style="--index: 3" class="label-char">r</span>
-                    <span style="--index: 3" class="label-char">a</span>
-                    <span style="--index: 3" class="label-char">d</span>
-                    <span style="--index: 3" class="label-char">o</span>
-                    <span style="--index: 3" class="label-char">u</span>
-                    <span style="--index: 3" class="label-char">r</span>
-                    <span style="--index: 3" class="label-char">o</span>
-                </label>
-            </div>
-
-            <div class="wave-group">
-                <input class="input" type="text" required="" readonly/>
-                <span class="bar"></span>
-                <label class="label">
-                    <span style="--index: 0" class="label-char">E</span>
-                    <span style="--index: 1" class="label-char">s</span>
-                    <span style="--index: 2" class="label-char">t</span>
-                    <span style="--index: 3" class="label-char">a</span>
-                    <span style="--index: 3" class="label-char">d</span>
-                    <span style="--index: 3" class="label-char">o</span>
-                </label>
-            </div>
-
-            <div class="wave-group">
-                <input class="input" type="text" required="" readonly/>
-                <span class="bar"></span>
-                <label class="label">
-                    <span style="--index: 0" class="label-char">C</span>
-                    <span style="--index: 1" class="label-char">i</span>
-                    <span style="--index: 2" class="label-char">d</span>
-                    <span style="--index: 3" class="label-char">a</span>
-                    <span style="--index: 3" class="label-char">d</span>
-                    <span style="--index: 3" class="label-char">e</span>
-                </label>
-            </div>
-
-            <div class="wave-group">
-                <input class="input" type="number" required="" />
-                <span class="bar"></span>
-                <label class="label">
-                    <span style="--index: 0" class="label-char">N</span>
-                    <span style="--index: 1" class="label-char">°</span>
-                </label>
-            </div>
-
-            <div class="wave-group">
-                <input class="input" type="text" required="" />
-                <span class="bar"></span>
-                <label class="label">
-                    <span style="--index: 0" class="label-char">C</span>
-                    <span style="--index: 1" class="label-char">o</span>
-                    <span style="--index: 2" class="label-char">m</span>
-                    <span style="--index: 3" class="label-char">p</span>
-                    <span style="--index: 3" class="label-char">l</span>
-                    <span style="--index: 3" class="label-char">e</span>
-                    <span style="--index: 3" class="label-char">m</span>
-                    <span style="--index: 3" class="label-char">e</span>
-                    <span style="--index: 3" class="label-char">n</span>
-                    <span style="--index: 3" class="label-char">t</span>
-                    <span style="--index: 3" class="label-char">o</span>
-                </label>
-            </div>
-
-
-        </div>
-        <div class="container_botao">
-            <a href="/toyhouse_war/">
-                <button class="button">
+                <!--  <a href="/toyhouse_war/">-->
+                <form action="/toyhouse_war/CadastrarController" method="post">
+                <button type="submit" class="button">
                     <span>Cadastrar-se</span>
                 </button>
-            </a>
+                </form>
 
-            <a href="/toyhouse_war/">
-                <button class="button">
-                    <span>Cancelar</span>
-                </button>
-            </a>
+                <a href="/toyhouse_war/">
+                    <button class="button">
+                        <span>Cancelar</span>
+                    </button>
+                </a>
+            </div>
         </div>
     </div>
-</div>
 </body>
+
 </html>

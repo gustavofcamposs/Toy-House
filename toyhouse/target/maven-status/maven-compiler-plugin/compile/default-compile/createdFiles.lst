@@ -8,11 +8,11 @@ toyhouse\domain\produto\Produto.class
 toyhouse\domain\pessoa\funcionario\Funcionario.class
 toyhouse\domain\produto\ImagemProduto.class
 toyhouse\domain\endereco\Bairro.class
-toyhouse\controller\EstadoController.class
 toyhouse\domain\pedido\Pedido.class
 toyhouse\repository\GenericRepository.class
 toyhouse\domain\pessoa\login\Login.class
 toyhouse\domain\pessoa\Pessoa.class
 toyhouse\domain\pedido\ItemPedido.class
+toyhouse\controller\CadastrarController.class
 toyhouse\domain\endereco\Cidade.class
 toyhouse\repository\endereco\EnderecoRepository.class
