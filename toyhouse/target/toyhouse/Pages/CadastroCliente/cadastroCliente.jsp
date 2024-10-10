@@ -34,7 +34,7 @@
         <div class="container_inputs">
 
             <div class="wave-group">
-                <input class="input" type="text" required="" />
+                <input class="input" type="text" name = "nome" required ="" />
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">N</span>
@@ -49,7 +49,7 @@
 
 
             <div class="wave-group">
-                <input class="input" type="email" required="" />
+                <input class="input" type="email" name = "email" required="" />
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">E</span>
@@ -63,7 +63,7 @@
             </div>
 
             <div class="wave-group">
-                <input class="input" type="password" required="" />
+                <input class="input" type="password"   name = "senha" required="" />
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">S</span>
@@ -77,7 +77,9 @@
             </div>
 
             <div class="wave-group">
-                <input class="input" type="password" required="" />
+                <input class="input" type="password" name = "confirmar" required="" />
+                <% String erroSenhaConfirmar = (String) request.getAttribute("erroSenhaConfirmar"); %>
+                <% if (erroSenhaConfirmar != null) { %><p><%= erroSenhaConfirmar %></p><% } %>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">C</span>
@@ -94,7 +96,7 @@
 
 
             <div class="wave-group">
-                <input class="input" type="text" required="" />
+                <input class="input" type="text"  name = "cpf" required="" />
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">C</span>
@@ -105,7 +107,7 @@
 
 
             <div class="wave-group">
-                <input class="input" type="tel" required="" />
+                <input class="input" type="tel" name = "tel" required="" />
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">T</span>
@@ -121,7 +123,7 @@
 
 
             <div class="wave-group">
-                <input class="input" type="text"/>
+                <input class="input" type="text"  name = "cep" required=""/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">C</span>
@@ -188,7 +190,7 @@
             </div>
 
             <div class="wave-group">
-                <input class="input" type="number" required="" />
+                <input class="input" type="number"  name = "numero" required="" />
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">N</span>
@@ -217,11 +219,13 @@
 
         </div>
         <div class="container_botao">
-            <a href="/toyhouse_war/">
-                <button class="button">
+
+            <!--  <a href="/toyhouse_war/">-->
+            <form action="/toyhouse_war/cadastroProduto" method="post">
+                <button type="submit" class="button">
                     <span>Cadastrar-se</span>
                 </button>
-            </a>
+            </form>
 
             <a href="/toyhouse_war/">
                 <button class="button">
@@ -232,4 +236,5 @@
     </div>
 </div>
 </body>
+
 </html>
