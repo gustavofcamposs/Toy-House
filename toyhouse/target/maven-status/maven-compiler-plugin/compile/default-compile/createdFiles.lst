@@ -1,4 +1,5 @@
 toyhouse\domain\endereco\Estado.class
+toyhouse\controller\produto\ProdutoController.class
 toyhouse\domain\endereco\Logradouro.class
 toyhouse\domain\JpaContextListener.class
 toyhouse\domain\pessoa\cliente\Cliente.class
