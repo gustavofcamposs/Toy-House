@@ -1,0 +1,18 @@
+# Ignore arquivos e diretórios do IntelliJ IDEA
+.idea/
+
+# Ignore diretórios gerados pelo Maven
+target/
+
+# Ignore arquivos compilados
+*.class
+*.jar
+*.war
+
+# Ignore arquivos temporários ou gerados
+*.log
+*.tmp
+*.temp
+
+# Ignore o diretório produto
+/src/main/java/toyhouse/controller/produto/
