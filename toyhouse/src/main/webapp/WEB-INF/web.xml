@@ -6,15 +6,17 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <!-- Definição de servlets -->
-  <servlet>
-    <servlet-name>EstadoController</servlet-name>
-    <servlet-class>toyhouse.controller.EstadoController</servlet-class>
-  </servlet>
 
+
+  <servlet>
+    <servlet-name>ClienteController</servlet-name>
+    <servlet-class>toyhouse.controller.cliente.ClienteController</servlet-class>
+  </servlet>
   <servlet-mapping>
-    <servlet-name>EstadoController</servlet-name>
-    <url-pattern>/estado</url-pattern>
+    <servlet-name>ClienteController</servlet-name>
+    <url-pattern>/cadastrarCliente</url-pattern>
   </servlet-mapping>
+
 
   <!-- Definição da página principal -->
   <welcome-file-list>

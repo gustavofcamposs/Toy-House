@@ -95,6 +95,12 @@
         max-width: 95%;
         height: 100%;
 
+        & .titulo{
+            height: 7%;
+            align-items: center;
+        }
+
+
         & .logo_formulario{
             display: flex;
         }

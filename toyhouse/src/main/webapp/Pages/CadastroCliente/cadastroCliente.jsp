@@ -1,4 +1,6 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="java.net.URLDecoder" %>
+<%@ page import="java.nio.charset.StandardCharsets" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -36,10 +38,9 @@
         <div class="titulo">
             <h1>Criar uma conta</h1>
         </div>
-
-        <form class="container_inputs" action="cadastroCliente" method="post">
+        <form class="container_inputs" action="/toyhouse_war/clienteCadastro" method="post">
             <div class="wave-group">
-                <input class="input" type="text" name="nome" required=""/>
+                <input class="input" type="text" name="nome"/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">N</span>
@@ -50,7 +51,7 @@
             </div>
 
             <div class="wave-group">
-                <input class="input" type="email" name="email" required=""/>
+                <input class="input" type="email" name="email"/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">E</span>
@@ -63,7 +64,7 @@
             </div>
 
             <div class="wave-group">
-                <input class="input" type="password" name="senha" required=""/>
+                <input class="input" type="password" name="senha"/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">S</span>
@@ -75,10 +76,7 @@
             </div>
 
             <div class="wave-group">
-                <input class="input" type="password" name="confirmar" required=""/>
-                <% String erroSenhaConfirmar = (String) request.getAttribute("erroSenhaConfirmar"); %>
-                <% if (erroSenhaConfirmar != null) { %><p><%= erroSenhaConfirmar %>
-            </p><% } %>
+                <input class="input" type="password" name="confirmarSenha"/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">C</span>
@@ -94,7 +92,7 @@
             </div>
 
             <div class="wave-group">
-                <input class="input" type="text" name="cpf" required=""/>
+                <input class="input" type="text" name="cpf" />
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">C</span>
@@ -104,7 +102,7 @@
             </div>
 
             <div class="wave-group">
-                <input class="input" type="tel" name="tel" required=""/>
+                <input class="input" type="tel" name="telefone" />
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">T</span>
@@ -119,7 +117,7 @@
             </div>
 
             <div class="wave-group">
-                <input class="input" type="text" name="cep" required=""/>
+                <input class="input" type="text" name="cep"/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">C</span>
@@ -129,7 +127,7 @@
             </div>
 
             <div class="wave-group">
-                <input class="input" type="text" name="cep" required="" readonly/>
+                <input class="input" type="text" readonly/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">B</span>
@@ -142,7 +140,7 @@
             </div>
 
             <div class="wave-group">
-                <input class="input" type="text" name="cep" required="" readonly/>
+                <input class="input" type="text" readonly/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">L</span>
@@ -159,7 +157,7 @@
             </div>
 
             <div class="wave-group">
-                <input class="input" type="text" name="cep" required="" readonly/>
+                <input class="input" type="text" readonly/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">E</span>
@@ -172,7 +170,7 @@
             </div>
 
             <div class="wave-group">
-                <input class="input" type="text" name="cep" required="" readonly/>
+                <input class="input" type="text" readonly/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">C</span>
@@ -185,7 +183,7 @@
             </div>
 
             <div class="wave-group">
-                <input class="input" type="number" name="numero" required=""/>
+                <input class="input" type="number" name="numero" />
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">N</span>
@@ -194,7 +192,7 @@
             </div>
 
             <div class="wave-group">
-                <input class="input" type="text" name="numero" required=""/>
+                <input class="input" type="text" name="numero" />
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">C</span>
@@ -211,6 +209,17 @@
                 </label>
             </div>
 
+            <!-- Exibindo erro da requisição -->
+            <%
+                String erro2 = request.getParameter("erro");
+                if (erro2 != null) {
+            %>
+            <p style="color: #FD4659; width: 42.5%; font-size: 15px">
+                <%= URLDecoder.decode(erro2, StandardCharsets.UTF_8) %>
+            </p> <!-- Mostra a mensagem de erro centralizada com 40% de largura -->
+            <%
+                }
+            %>
 
             <!-- Botão de Submit -->
             <div class="container_botao">

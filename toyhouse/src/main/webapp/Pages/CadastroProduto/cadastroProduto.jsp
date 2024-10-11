@@ -1,4 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.net.URLDecoder" %>
+<%@ page import="java.nio.charset.StandardCharsets" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,7 +21,7 @@
 <header class="header">
     <div class="header_container">
         <div class="logo">
-            <a href="./home.html"><img class="imagem" src="<%= request.getContextPath() %>/Images/Home/ToyHouseLogo.jpg"
+            <a href="/toyhouse_war/"><img class="imagem" src="<%= request.getContextPath() %>/Images/Home/ToyHouseLogo.jpg"
                                        alt="Logotipo ToyHouse"></a>
         </div>
     </div>
@@ -27,7 +29,7 @@
 <div class="container">
     <div class="container_formulario">
         <div class="logo_formulario">
-            <a href="./home.html"><img class="imagem" src="<%= request.getContextPath() %>/Images/Home/ToyHouseLogo.jpg"
+            <a href="/toyhouse_war/"><img class="imagem" src="<%= request.getContextPath() %>/Images/Home/ToyHouseLogo.jpg"
                                        alt="Logotipo ToyHouse"></a>
         </div>
         <div class="titulo">
@@ -35,9 +37,9 @@
         </div>
 
 
-        <form class="container_inputs" action="cadastroProduto" method="post">
+        <form class="container_inputs" action="/toyhouse_war/cadastroProduto" method="post">
             <div class="wave-group">
-                <input class="input" type="text" required=""/>
+                <input class="input" type="text" name="nome"/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">N</span>
@@ -52,7 +54,7 @@
 
 
             <div class="wave-group">
-                <input class="input" type="text" required=""/>
+                <input class="input" type="text" name="categoria"/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">C</span>
@@ -84,7 +86,7 @@
 
 
             <div class="wave-group">
-                <input class="input" type="text" required=""/>
+                <input class="input" type="text" name="descricao"/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">D</span>
@@ -101,7 +103,7 @@
 
 
             <div class="wave-group">
-                <input class="input" type="number" required=""/>
+                <input class="input" type="number" name="preco"/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">P</span>
@@ -114,7 +116,7 @@
 
 
             <div class="wave-group">
-                <input class="input" type="number" required=""/>
+                <input class="input" type="number" name="estoque"/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">E</span>
@@ -126,6 +128,19 @@
                     <span style="--index: 3" class="label-char">e</span>
                 </label>
             </div>
+
+            <!-- Exibindo erro da requisição -->
+            <%
+                String erro2 = request.getParameter("erro");
+                if (erro2 != null) {
+            %>
+            <p style="color: #FD4659; width: auto; font-size: 15px">
+                <%= URLDecoder.decode(erro2, StandardCharsets.UTF_8) %>
+            </p> <!-- Mostra a mensagem de erro centralizada com 40% de largura -->
+            <%
+                }
+            %>
+
             <div class="container_botao">
                 <button type="submit" class="button">
                     <span>Cadastrar-se</span>
@@ -139,9 +154,7 @@
             </div>
 
         </form>
-
     </div>
-
 
 </div>
 </body>

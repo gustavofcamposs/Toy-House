@@ -5,96 +5,88 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
+import java.net.URLEncoder;
 
-@WebServlet("/cadastroCliente")
+
+
+@WebServlet("/clienteCadastro")
 public class ClienteController extends HttpServlet {
+    private static final long serialVersionUID = 1L;
 
-    public ClienteController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-    /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-     *      response)
-     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
         // TODO Auto-generated method stub
-        response.getWriter().append("Served at: ").append(request.getContextPath());
+        response.getWriter().append("Chegou aqui: ").append(request.getContextPath());
+
     }
 
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-     *      response)
-     */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Capturando os parâmetros do formulário
         String nome = request.getParameter("nome");
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
-        String senhaConfirmar = request.getParameter("confirmar");
+        String confirmarSenha = request.getParameter("confirmarSenha");
         String cpf = request.getParameter("cpf");
-        String tel = request.getParameter("tel");
+        String telefone = request.getParameter("telefone");
         String cep = request.getParameter("cep");
-        String numeroStr = request.getParameter("numero");
-
-        boolean hasError = false;
-        String erroSenhaConfirmar = null;
-        String erroNome = null;
-
+        String numero = request.getParameter("numero");
+        String mensagemErro = null;
 
         // Validações
-        if (nome == null || nome.trim().isEmpty()) {
-            erroNome = "Precisa ter um nome";
-            hasError = true;
+        if (nome == null || nome.isEmpty()) {
+            mensagemErro = "Nome é obrigatório.";
+            response.sendRedirect("Pages/CadastroCliente/cadastroCliente.jsp?erro=" + URLEncoder.encode(mensagemErro, "UTF-8"));
+            return; // Retorna para não continuar
         }
 
-        if (email == null || email.trim().isEmpty()) {
-            hasError = true;
+        if (email == null || email.isEmpty()) {
+            mensagemErro = "Email é obrigatório.";
+            response.sendRedirect("Pages/CadastroCliente/cadastroCliente.jsp?erro=" + URLEncoder.encode(mensagemErro, "UTF-8"));
+            return; // Retorna para não continuar
         }
 
-        if (senha == null || senha.trim().isEmpty()) {
-            hasError = true;
+        if (senha == null || senha.isEmpty()) {
+            mensagemErro = "Senha é obrigatória.";
+            response.sendRedirect("Pages/CadastroCliente/cadastroCliente.jsp?erro=" + URLEncoder.encode(mensagemErro, "UTF-8"));
+            return; // Retorna para não continuar
         }
 
-        if (senhaConfirmar == null || !senhaConfirmar.equals(senha)) {
-            erroSenhaConfirmar = "As senhas não coincidem.";
-            hasError = true;
+        if (!senha.equals(confirmarSenha)) {
+            mensagemErro = "As senhas não coincidem.";
+            response.sendRedirect("Pages/CadastroCliente/cadastroCliente.jsp?erro=" + URLEncoder.encode(mensagemErro, "UTF-8"));
+            return; // Retorna para não continuar
         }
 
-        if (cpf == null || cpf.trim().isEmpty()) {
-            hasError = true;
+        if (cpf == null || cpf.isEmpty()) {
+            mensagemErro = "CPF é obrigatório.";
+            response.sendRedirect("Pages/CadastroCliente/cadastroCliente.jsp?erro=" + URLEncoder.encode(mensagemErro, "UTF-8"));
+            return; // Retorna para não continuar
         }
 
-        if (tel == null || tel.trim().isEmpty()) {
-            hasError = true;
+        if (telefone == null || telefone.isEmpty()) {
+            mensagemErro = "Telefone é obrigatório.";
+            response.sendRedirect("Pages/CadastroCliente/cadastroCliente.jsp?erro=" + URLEncoder.encode(mensagemErro, "UTF-8"));
+            return; // Retorna para não continuar
         }
 
-        if (cep == null || cep.trim().isEmpty()) {
-            hasError = true;
+        if (cep == null || cep.isEmpty()) {
+            mensagemErro = "CEP é obrigatório.";
+            response.sendRedirect("Pages/CadastroCliente/cadastroCliente.jsp?erro=" + URLEncoder.encode(mensagemErro, "UTF-8"));
+            return; // Retorna para não continuar
         }
 
-        if (numeroStr == null || numeroStr.trim().isEmpty()) {
-
-            hasError = true;
-        } else {
-            try {
-                // Converter para inteiro
-            } catch (NumberFormatException e) {
-                hasError = true;
-            }
+        if (numero == null || numero.isEmpty()) {
+            mensagemErro = "Número é obrigatório.";
+            response.sendRedirect("Pages/CadastroCliente/cadastroCliente.jsp?erro=" + URLEncoder.encode(mensagemErro, "UTF-8"));
+            return; // Retorna para não continuar
         }
 
-        // Verifica se há erro
-        if (hasError) {
-            // Reenvia o usuário para a página de cadastro
-            request.setAttribute("erroSenhaConfirmar", erroSenhaConfirmar); // so deixei para ver funcionando
-            request.getRequestDispatcher("Pages/CadastroCliente/cadastroCliente.jsp").forward(request, response);
-        } else {
-            response.sendRedirect("/toyhouse_war/");
-        }
+        // Se todos os dados estiverem corretos, pode continuar com o processamento
+        response.sendRedirect("/toyhouse_war");
+        response.getWriter().write(""); // Sucesso (nenhuma mensagem de erro)
     }
+
 }
