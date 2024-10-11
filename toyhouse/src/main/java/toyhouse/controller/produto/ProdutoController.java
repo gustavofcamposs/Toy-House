@@ -7,16 +7,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 
 @WebServlet("/cadastroProduto")
 public class ProdutoController extends HttpServlet {
-
-
-    public ProdutoController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+    private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
@@ -32,64 +28,74 @@ public class ProdutoController extends HttpServlet {
         String precoStr = request.getParameter("preco");
         String estoqueStr = request.getParameter("estoque");
 
-        boolean hasError = false;
-        String erroNome = null;
-        String erroCategoria = null;
-        String erroPreco = null;
-        String erroEstoque = null;
+        String mensagemErro = null;
 
         // Validações
         if (nome == null || nome.trim().isEmpty()) {
-            erroNome = "O nome do produto é obrigatório.";
-            hasError = true;
+            mensagemErro = "Nome é obrigatório.";
+            response.sendRedirect("Pages/CadastroProduto/cadastroProduto.jsp?erro=" + URLEncoder.encode(mensagemErro, "UTF-8"));
+            return; // Retorna para não continuar
         }
 
         if (categoria == null || categoria.trim().isEmpty()) {
-            erroCategoria = "A categoria do produto é obrigatória.";
-            hasError = true;
+            mensagemErro = "Necessário informar a categoria.";
+            response.sendRedirect("Pages/CadastroProduto/cadastroProduto.jsp?erro=" + URLEncoder.encode(mensagemErro, "UTF-8"));
+            return; // Retorna para não continuar
         }
 
         if (descricao == null || descricao.trim().isEmpty()) {
-            hasError = true; // Você pode adicionar uma mensagem de erro aqui, se desejar.
+            mensagemErro = "Descrição é obrigatório";
+            response.sendRedirect("Pages/CadastroProduto/cadastroProduto.jsp?erro=" + URLEncoder.encode(mensagemErro, "UTF-8"));
+            return; // Retorna para não continuar
         }
 
         if (precoStr == null || precoStr.trim().isEmpty()) {
-            erroPreco = "O preço do produto é obrigatório.";
-            hasError = true;
+            mensagemErro = "Preço do Produto é obrigatório.";
+            response.sendRedirect("Pages/CadastroProduto/cadastroProduto.jsp?erro=" + URLEncoder.encode(mensagemErro, "UTF-8"));
+            return; // Retorna para não continuar
         } else {
             try {
-                Double.parseDouble(precoStr); // Verifica se o preço é um número válido
+                // Tenta converter o valor em um número do tipo Double
+                Double preco = Double.parseDouble(precoStr);
+
+                // Valida se o número é maior que zero
+                if (preco <= 0) {
+                    mensagemErro = "O preço deve ser maior que zero.";
+                    response.sendRedirect("Pages/CadastroProduto/cadastroProduto.jsp?erro=" + URLEncoder.encode(mensagemErro, "UTF-8"));
+                    return; // Retorna para não continuar
+                }
             } catch (NumberFormatException e) {
-                erroPreco = "O preço deve ser um número válido.";
-                hasError = true;
+                mensagemErro = "O preço precisa ser um valor numérico válido.";
+                response.sendRedirect("Pages/CadastroProduto/cadastroProduto.jsp?erro=" + URLEncoder.encode(mensagemErro, "UTF-8"));
+                return; // Retorna para não continuar
             }
         }
 
         if (estoqueStr == null || estoqueStr.trim().isEmpty()) {
-            erroEstoque = "A quantidade em estoque é obrigatória.";
-            hasError = true;
+            mensagemErro = "A quantidade de estoque é obrigatória.";
+            response.sendRedirect("Pages/CadastroProduto/cadastroProduto.jsp?erro=" + URLEncoder.encode(mensagemErro, "UTF-8"));
+            return; // Retorna para não continuar
         } else {
             try {
-                Integer.parseInt(estoqueStr); // Verifica se o estoque é um número válido
+                // Tenta converter o valor em um número do tipo Integer (pois estoque geralmente é um valor inteiro)
+                int estoque = Integer.parseInt(estoqueStr);
+
+                // Valida se o número de estoque é maior ou igual a zero
+                if (estoque < 0) {
+                    mensagemErro = "A quantidade de estoque não pode ser negativa.";
+                    response.sendRedirect("Pages/CadastroProduto/cadastroProduto.jsp?erro=" + URLEncoder.encode(mensagemErro, "UTF-8"));
+                    return; // Retorna para não continuar
+                }
             } catch (NumberFormatException e) {
-                erroEstoque = "A quantidade em estoque deve ser um número válido.";
-                hasError = true;
+                mensagemErro = "A quantidade de estoque precisa ser um valor numérico válido.";
+                response.sendRedirect("Pages/CadastroProduto/cadastroProduto.jsp?erro=" + URLEncoder.encode(mensagemErro, "UTF-8"));
+                return; // Retorna para não continuar
             }
         }
 
-        // Verifica se há erro
-        if (hasError) {
-            // Reenvia o usuário para a página de cadastro
-            request.setAttribute("erroNome", erroNome);
-            request.setAttribute("erroCategoria", erroCategoria);
-            request.setAttribute("erroPreco", erroPreco);
-            request.setAttribute("erroEstoque", erroEstoque);
-            request.getRequestDispatcher("Pages/CadastroProduto/cadastroProduto.jsp").forward(request, response);
-        } else {
-            // Aqui você pode adicionar a lógica para salvar o produto no banco de dados
 
-            response.sendRedirect("/toyhouse_war/"); // Redireciona após o cadastro
-        }
+        // Se todos os dados estiverem corretos, pode continuar com o processamento
+        response.sendRedirect("/toyhouse_war");
     }
 
 
