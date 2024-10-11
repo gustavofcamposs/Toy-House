@@ -8,82 +8,71 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
+
 @WebServlet("/cadastroProduto")
 public class ProdutoController extends HttpServlet {
+
 
     public ProdutoController() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-    /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-     *      response)
-     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
         // TODO Auto-generated method stub
         response.getWriter().append("Served at: ").append(request.getContextPath());
     }
 
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-     *      response)
-     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String nome = request.getParameter("nome");
-        String email = request.getParameter("email");
-        String senha = request.getParameter("senha");
-        String senhaConfirmar = request.getParameter("confirmar");
-        String cpf = request.getParameter("cpf");
-        String tel = request.getParameter("tel");
-        String cep = request.getParameter("cep");
-        String numeroStr = request.getParameter("numero");
+        String categoria = request.getParameter("categoria");
+        String descricao = request.getParameter("descricao");
+        String precoStr = request.getParameter("preco");
+        String estoqueStr = request.getParameter("estoque");
 
         boolean hasError = false;
-        String erroSenhaConfirmar = null;
         String erroNome = null;
-
+        String erroCategoria = null;
+        String erroPreco = null;
+        String erroEstoque = null;
 
         // Validações
         if (nome == null || nome.trim().isEmpty()) {
-            erroNome = "Precisa ter um nome";
+            erroNome = "O nome do produto é obrigatório.";
             hasError = true;
         }
 
-        if (email == null || email.trim().isEmpty()) {
+        if (categoria == null || categoria.trim().isEmpty()) {
+            erroCategoria = "A categoria do produto é obrigatória.";
             hasError = true;
         }
 
-        if (senha == null || senha.trim().isEmpty()) {
-            hasError = true;
+        if (descricao == null || descricao.trim().isEmpty()) {
+            hasError = true; // Você pode adicionar uma mensagem de erro aqui, se desejar.
         }
 
-        if (senhaConfirmar == null || !senhaConfirmar.equals(senha)) {
-            erroSenhaConfirmar = "As senhas não coincidem.";
-            hasError = true;
-        }
-
-        if (cpf == null || cpf.trim().isEmpty()) {
-            hasError = true;
-        }
-
-        if (tel == null || tel.trim().isEmpty()) {
-            hasError = true;
-        }
-
-        if (cep == null || cep.trim().isEmpty()) {
-            hasError = true;
-        }
-
-        if (numeroStr == null || numeroStr.trim().isEmpty()) {
-
+        if (precoStr == null || precoStr.trim().isEmpty()) {
+            erroPreco = "O preço do produto é obrigatório.";
             hasError = true;
         } else {
             try {
-                // Converter para inteiro
+                Double.parseDouble(precoStr); // Verifica se o preço é um número válido
             } catch (NumberFormatException e) {
+                erroPreco = "O preço deve ser um número válido.";
+                hasError = true;
+            }
+        }
+
+        if (estoqueStr == null || estoqueStr.trim().isEmpty()) {
+            erroEstoque = "A quantidade em estoque é obrigatória.";
+            hasError = true;
+        } else {
+            try {
+                Integer.parseInt(estoqueStr); // Verifica se o estoque é um número válido
+            } catch (NumberFormatException e) {
+                erroEstoque = "A quantidade em estoque deve ser um número válido.";
                 hasError = true;
             }
         }
@@ -91,10 +80,17 @@ public class ProdutoController extends HttpServlet {
         // Verifica se há erro
         if (hasError) {
             // Reenvia o usuário para a página de cadastro
-            request.setAttribute("erroSenhaConfirmar", erroSenhaConfirmar); // so deixei para ver funcionando
-            request.getRequestDispatcher("Pages/CadastroCliente/cadastroCliente.jsp").forward(request, response);
+            request.setAttribute("erroNome", erroNome);
+            request.setAttribute("erroCategoria", erroCategoria);
+            request.setAttribute("erroPreco", erroPreco);
+            request.setAttribute("erroEstoque", erroEstoque);
+            request.getRequestDispatcher("Pages/CadastroProduto/cadastroProduto.jsp").forward(request, response);
         } else {
-            response.sendRedirect("/toyhouse_war/");
+            // Aqui você pode adicionar a lógica para salvar o produto no banco de dados
+
+            response.sendRedirect("/toyhouse_war/"); // Redireciona após o cadastro
         }
     }
+
+
 }

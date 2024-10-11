@@ -10,7 +10,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+          rel="stylesheet">
     <title>Cadastro Produto</title>
 </head>
 <body>
@@ -18,22 +19,25 @@
 <header class="header">
     <div class="header_container">
         <div class="logo">
-            <a href="./home.html"><img class="imagem" src="<%= request.getContextPath() %>/Images/Home/ToyHouseLogo.jpg" alt="Logotipo ToyHouse"></a>
+            <a href="./home.html"><img class="imagem" src="<%= request.getContextPath() %>/Images/Home/ToyHouseLogo.jpg"
+                                       alt="Logotipo ToyHouse"></a>
         </div>
     </div>
 </header>
 <div class="container">
     <div class="container_formulario">
         <div class="logo_formulario">
-            <a href="./home.html"><img class="imagem" src="<%= request.getContextPath() %>/Images/Home/ToyHouseLogo.jpg" alt="Logotipo ToyHouse"></a>
+            <a href="./home.html"><img class="imagem" src="<%= request.getContextPath() %>/Images/Home/ToyHouseLogo.jpg"
+                                       alt="Logotipo ToyHouse"></a>
         </div>
         <div class="titulo">
             <h1>Cadastro de Produto</h1>
         </div>
-        <div class="container_inputs">
 
+
+        <form class="container_inputs" action="cadastroProduto" method="post">
             <div class="wave-group">
-                <input class="input" type="text" required="" />
+                <input class="input" type="text" required=""/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">N</span>
@@ -48,7 +52,7 @@
 
 
             <div class="wave-group">
-                <input class="input" type="text" required="" />
+                <input class="input" type="text" required=""/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">C</span>
@@ -80,7 +84,7 @@
 
 
             <div class="wave-group">
-                <input class="input" type="text" required="" />
+                <input class="input" type="text" required=""/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">D</span>
@@ -97,7 +101,7 @@
 
 
             <div class="wave-group">
-                <input class="input" type="number" required="" />
+                <input class="input" type="number" required=""/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">P</span>
@@ -110,7 +114,7 @@
 
 
             <div class="wave-group">
-                <input class="input" type="number" required="" />
+                <input class="input" type="number" required=""/>
                 <span class="bar"></span>
                 <label class="label">
                     <span style="--index: 0" class="label-char">E</span>
@@ -122,23 +126,23 @@
                     <span style="--index: 3" class="label-char">e</span>
                 </label>
             </div>
-
-        </div>
-
-        <div class="container_botao">
-            <a href="/toyhouse_war/">
-                <button class="button">
+            <div class="container_botao">
+                <button type="submit" class="button">
                     <span>Cadastrar-se</span>
                 </button>
-            </a>
 
-            <a href="/toyhouse_war/">
-                <button class="button">
-                    <span>Cancelar</span>
-                </button>
-            </a>
-        </div>
+                <a href="/toyhouse_war/">
+                    <button type="button" class="button">
+                        <span>Cancelar</span>
+                    </button>
+                </a>
+            </div>
+
+        </form>
+
     </div>
+
+
 </div>
 </body>
 </html>
