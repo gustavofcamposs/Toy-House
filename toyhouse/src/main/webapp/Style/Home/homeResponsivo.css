@@ -1,35 +1,17 @@
 
 @media (min-width: 1920px){
-
-    .header{
-        background-color: red;
-    }
-
 }
 
 
-
 @media (min-width: 1200px) AND (max-width: 1919px){
-
-    .header{
-
-    }
 }
 
 
 @media (min-width: 992px) AND (max-width: 1199px){
-
-    .header{
-
-    }
 }
 
 
 @media (min-width: 851px) AND (max-width: 991px){
-
-    .header{
-
-    }
 }
 
 
@@ -57,6 +39,7 @@
 
 }
 
+
 @media (min-width: 480px) AND (max-width: 850px){
 
     .nav_header{
@@ -74,11 +57,6 @@
                 min-width: 50%;
             }
         }
-
-        & .itens_nav{
-            display: none;
-        }
-
     }
 
     .container_icon{
@@ -111,7 +89,24 @@
 
         background-color: #7BC8F6;
     }
+
+    .itens_nav{
+
+        & .menu-item,
+        .menu-open-button{
+            height: 60px;
+            width: 60px;
+        }
+
+
+        & .menu-open:checked ~ .menu-item {
+            height: 130px;
+            width: 130px;
+        }
+    }
 }
+
+
 
 
 /* Mobile */
@@ -178,10 +173,19 @@
         }
     }
 
-    /*Ocultando opções, só vão aparecer no Menu Hamburguer*/
-
     .itens_nav{
-        display: none;
+
+        & .menu-item,
+        .menu-open-button{
+            height: 50px;
+            width: 50px;
+        }
+
+
+        & .menu-open:checked ~ .menu-item {
+            height: 110px;
+            width: 110px;
+        }
     }
 
 }
