@@ -55,7 +55,7 @@
                 <a href="#" class="menu-item blue"> <img src="<%= request.getContextPath() %>/Images/Home/IconPerfil.webp"  alt=""> <i class="fa fa-anchor"></i> </a>
                 <a href="#" class="menu-item green"> <img src="<%= request.getContextPath() %>/Images/Home/IconBuy.png"  alt="">  <i class="fa fa-coffee"></i> </a>
                 <a href="#" class="menu-item red"> <img src="<%= request.getContextPath() %>/Images/Home/IconConfig.png"  alt=""> <i class="fa fa-heart"></i> </a>
-                <a href="#" class="menu-item purple"> <img src="<%= request.getContextPath() %>/Images/Home/IconEntrar.webp"  alt="">  <i class="fa fa-microphone"></i> </a>
+                <a href="/toyhouse_war/Pages/CadastroCliente/cadastroCliente.jsp" class="menu-item purple"> <img src="<%= request.getContextPath() %>/Images/Home/IconEntrar.webp"  alt="">  <i class="fa fa-microphone"></i> </a>
                 <a href="#" class="menu-item orange"> <i class="fa fa-star"></i> </a>
                 <a href="#" class="menu-item lightblue"> <i class="fa fa-diamond"></i> </a>
             </nav>
