@@ -1,123 +1,149 @@
-/*  Telas extra grandes */
-
-
-/*@media(min-width: 1800px){
-    .header{
+/* =======================================================================
+   Telas extra grandes (largura mínima de 1800px)
+   ======================================================================= */
+/*
+@media (min-width: 1800px) {
+    .header {
         background-color: yellow;
     }
 
-    .container_formulario{
+    .container_formulario {
         width: 40rem;
     }
-}*/
+}
+*/
 
-
-
-
-/* Desktops */
-
-/*@media (min-width: 1200px) AND (max-width:1799px){
-
-    .header{
+/* =======================================================================
+   Desktops (largura entre 1200px e 1799px)
+   ======================================================================= */
+/*
+@media (min-width: 1200px) and (max-width: 1799px) {
+    .header {
         background-color: red;
     }
+}
+*/
 
-
-}*/
-
-
-/* Tablets/notebooks grandes */
-
-@media (min-width: 970px) AND (max-width: 1199px){
-
-    .container_formulario{
+/* =======================================================================
+   Tablets/notebooks grandes (largura entre 970px e 1199px)
+   ======================================================================= */
+@media (min-width: 970px) and (max-width: 1199px) {
+    .container_formulario {
         margin-top: -3%;
     }
-
 }
 
-
-
-
-/* Tablets pequenos */
-
-@media (min-width: 720px) AND (max-width: 970px){
-
-    .container_formulario{
+/* =======================================================================
+   Tablets pequenos (largura entre 720px e 970px)
+   ======================================================================= */
+@media (min-width: 720px) and (max-width: 970px) {
+    .container_formulario {
         margin-top: -6.4%;
     }
-
 }
 
-
-/*  Dispositivos menores e uma parte do Mobile*/
-/*O logo será exibido dentro do forms*/
-@media (min-width: 590px) AND (max-width: 720px){
-
-    .container_botao{
+/* =======================================================================
+   Dispositivos médios e parte do mobile (largura entre 590px e 720px)
+   ======================================================================= */
+@media (min-width: 590px) and (max-width: 720px) {
+    .container_botao {
         margin-top: -4%;
     }
 
-    .logo{
+    .logo {
         display: none;
     }
 
-    .container_formulario{
+    .container_formulario {
         margin-top: -6%;
 
-        & .logo_formulario{
+        /* Mostra a logo dentro do formulário */
+        & .logo_formulario {
             display: flex;
         }
     }
 }
 
-
-/* A partir de telas menores que esse media o forms irá cobrir 100% da tela*/
-@media (max-width: 590px){
-
-    .container_botao{
+/* =======================================================================
+   Mobile pequeno (largura menor que 590px)
+   O formulário cobre 100% da tela e elementos são ajustados para responsividade
+   ======================================================================= */
+@media (max-width: 590px) {
+    .container_botao {
         margin-top: 0;
     }
 
-    .logo{
+    .logo {
         display: none;
     }
 
-    .header{
+    .header {
         display: none;
     }
 
-    .container{
-        height: 140vh;
+    .container {
+        height: 100vh;
     }
 
-    .container_formulario{
+    .container_formulario {
+        justify-content: flex-start;
         max-width: 95%;
         height: 100%;
 
-        & .titulo{
-            height: 7%;
-            align-items: center;
+        & .titulo {
+            height: 8%;
+            align-items: flex-end;
         }
 
+        & .container_inputs {
+            justify-content: center;
+            min-height: 70%;
+            max-height: auto;
+        }
 
-        & .logo_formulario{
+        & .logo_formulario {
             display: flex;
-        }
+            align-items: flex-end;
+            height: 10%;
 
+            & .imagem {
+                height: 45px;
+                width: 45px;
+            }
+        }
     }
 
+    .input-container .line {
+        left: 280px;
+    }
 
-    .wave-group{
+    .wave-group {
         width: 90%;
 
-        & .input{
+        & .input {
             width: 100%;
         }
     }
 
-
-    .container_botao{
+    .container_botao {
         max-height: 6%;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .input-container .line {
+        left: 200px;
+    }
+}
+
+
+/* =======================================================================
+   Ajustes para tablets com altura mínima de 1025px
+   ======================================================================= */
+@media (min-height: 1025px) {
+    .container_formulario {
+        max-height: 80%;
+        width: 35em;
     }
 }
