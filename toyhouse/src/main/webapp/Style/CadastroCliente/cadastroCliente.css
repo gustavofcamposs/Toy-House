@@ -285,19 +285,11 @@
 button {
     align-items: center;
     background-color: transparent;
-    color: #3C4142;
     cursor: pointer;
     display: flex;
-    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.5;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bolder;
     outline: 0;
     border: 0;
-
+    color: #3C4142;
 }
 
 button:before {
@@ -313,4 +305,15 @@ button:before {
 button:hover:before {
     background-color: #333333;
     width: 3rem;
+    color: #3C4142;
+}
+
+button a{
+    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #3C4142;
 }

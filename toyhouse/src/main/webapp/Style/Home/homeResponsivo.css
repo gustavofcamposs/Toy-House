@@ -1,198 +1,168 @@
+/* Media Queries */
 
-@media (min-width: 1920px){
+/* Large screens (1920px and up) */
+@media (min-width: 1920px) {
+    /* Add styles for large screens */
 }
 
-
-@media (min-width: 1200px) AND (max-width: 1919px){
+/* Medium to large screens (1200px to 1919px) */
+@media (min-width: 1200px) and (max-width: 1919px) {
+    /* Add styles for medium to large screens */
 }
 
-
-@media (min-width: 992px) AND (max-width: 1199px){
+/* Small to medium screens (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Add styles for small to medium screens */
 }
 
-
-@media (min-width: 851px) AND (max-width: 991px){
+/* Smaller screens (851px to 991px) */
+@media (min-width: 851px) and (max-width: 991px) {
+    /* Add styles for smaller screens */
 }
 
+/* Tablets and small screens (480px to 850px) */
+@media (min-width: 480px) and (max-width: 850px) {
 
-
-
-/* Alinha a imagem pois ela começa a sobrepor outros elementos*/
-@media (min-width: 480px) AND (max-width: 650px){
-
-    .container_search{
-        width: 70%;
-
-        & .input__container{
-            width: 70%;
-        }
-    }
-
-    .imagem{
-        min-width: 50px;
-        max-height: 40px;
-    }
-
-    .header-hamburguer{
-        min-width: 45%;
-    }
-
-}
-
-
-@media (min-width: 480px) AND (max-width: 850px){
-
-    .nav_header{
-
+    .nav_header {
         width: 95%;
 
-        & .logo{
+        .logo {
             width: 10%;
         }
 
-        & .container_search{
+        .container_search {
             width: 80%;
 
-            & .input__container{
+            .input__container {
                 min-width: 50%;
             }
         }
     }
 
-    .container_icon{
-
+    .container_icon {
         display: flex;
         align-items: center;
         justify-content: center;
 
-        &   #Icone_ClickBurguer{
+        #Icone_ClickBurguer {
             display: flex;
         }
     }
 
-
-    .container_menu_hamburguer{
+    .container_menu_hamburguer {
         display: flex;
-
         justify-content: flex-end;
-
-
         height: 100vh;
         width: 100%;
     }
 
-    .header-hamburguer{
+    .header-hamburguer {
         display: flex;
-
         height: 100vh;
         width: 35%;
-
         background-color: #7BC8F6;
     }
 
-    .itens_nav{
-
-        & .menu-item,
-        .menu-open-button{
+    .itens_nav {
+        .menu-item,
+        .menu-open-button {
             height: 60px;
             width: 60px;
         }
 
-
-        & .menu-open:checked ~ .menu-item {
+        .menu-open:checked ~ .menu-item {
             height: 130px;
             width: 130px;
         }
     }
 }
 
-
-
-
-/* Mobile */
+/* Mobile (up to 480px) */
 @media (max-width: 480px) {
 
-
-    .nav_header{
+    .nav_header {
         width: 100%;
         justify-content: space-around;
     }
 
-
-    /*Posicionar e deixar visível o Container e o Botão do Menu*/
-    .container_menu_hamburguer{
+    /* Position and display the menu button */
+    .container_menu_hamburguer {
         display: flex;
-
         justify-content: flex-end;
-
         height: 100vh;
         width: 100%;
     }
 
-    .header-hamburguer{
+    .header-hamburguer {
         display: flex;
-
         height: 100vh;
         width: 100%;
-
-        background-image: radial-gradient(circle 8px at 92% 63%, rgb(241,17,255) 0%,transparent 22%),radial-gradient(circle 2px at 73% 80%, rgb(51,197,244) 0%,transparent 60%),radial-gradient(circle 2px at 88% 58%, rgb(51,197,244) 0%,transparent 5%),radial-gradient(circle 2px at 39% 24%, rgb(51,197,244) 0%,transparent 17%),radial-gradient(circle 2px at 31% 10%, rgb(51,197,244) 0%,transparent 83%),radial-gradient(circle 2px at 25% 64%, rgb(51,197,244) 0%,transparent 65%),radial-gradient(circle 2px at 46% 18%, rgb(51,197,244) 0%,transparent 86%),radial-gradient(circle 2px at 27% 89%, rgb(51,197,244) 0%,transparent 61%),radial-gradient(circle 2px at 72% 43%, rgb(51,197,244) 0%,transparent 46%),radial-gradient(circle 2px at 73% 2%, rgb(51,197,244) 0%,transparent 87%),radial-gradient(circle 5px at 94% 33%, rgb(182,182,75) 0%,transparent 93%),radial-gradient(circle 5px at 35% 87%, rgb(182,182,75) 0%,transparent 42%),radial-gradient(circle 4px at 78% 1%, rgb(255,247,20) 0%,transparent 76%),radial-gradient(circle 4px at 71% 51%, rgb(255,247,20) 0%,transparent 69%),radial-gradient(circle 4px at 26% 45%, rgb(255,247,20) 0%,transparent 83%),linear-gradient(90deg, rgb(52,56,55) 0%, rgb(52,56,55) 50%,rgb(52,56,55) 50%, rgb(52,56,55) 100%); background-size: 278px 278px;
+        background-image: radial-gradient(circle 8px at 92% 63%, rgb(241,17,255) 0%, transparent 22%),
+        radial-gradient(circle 2px at 73% 80%, rgb(51,197,244) 0%, transparent 60%),
+        radial-gradient(circle 2px at 88% 58%, rgb(51,197,244) 0%, transparent 5%),
+        radial-gradient(circle 2px at 39% 24%, rgb(51,197,244) 0%, transparent 17%),
+        radial-gradient(circle 2px at 31% 10%, rgb(51,197,244) 0%, transparent 83%),
+        radial-gradient(circle 2px at 25% 64%, rgb(51,197,244) 0%, transparent 65%),
+        radial-gradient(circle 2px at 46% 18%, rgb(51,197,244) 0%, transparent 86%),
+        radial-gradient(circle 2px at 27% 89%, rgb(51,197,244) 0%, transparent 61%),
+        radial-gradient(circle 2px at 72% 43%, rgb(51,197,244) 0%, transparent 46%),
+        radial-gradient(circle 2px at 73% 2%, rgb(51,197,244) 0%, transparent 87%),
+        radial-gradient(circle 5px at 94% 33%, rgb(182,182,75) 0%, transparent 93%),
+        radial-gradient(circle 5px at 35% 87%, rgb(182,182,75) 0%, transparent 42%),
+        radial-gradient(circle 4px at 78% 1%, rgb(255,247,20) 0%, transparent 76%),
+        radial-gradient(circle 4px at 71% 51%, rgb(255,247,20) 0%, transparent 69%),
+        radial-gradient(circle 4px at 26% 45%, rgb(255,247,20) 0%, transparent 83%),
+        linear-gradient(90deg, rgb(52,56,55) 0%, rgb(52,56,55) 50%, rgb(52,56,55) 50%, rgb(52,56,55) 100%);
+        background-size: 278px 278px;
     }
 
-
-
-    .container_icon{
-
+    .container_icon {
         display: flex;
         align-items: center;
         justify-content: center;
 
-        &   #Icone_ClickBurguer{
+        #Icone_ClickBurguer {
             display: flex;
         }
     }
 
-    /*redimensionando Os containers para o Input cobrir a maior parte*/
-    .logo{
+    /* Resize containers for input to cover more space */
+    .logo {
         width: 12%;
 
-        & .imagem{
+        .imagem {
             height: 50%;
             width: 95%;
         }
     }
 
-    .container_icon{
+    .container_icon {
         width: 8%;
     }
 
-    .container_search{
+    .container_search {
         width: 60%;
 
-        & .input__container{
+        .input__container {
             padding: 5px 10px;
         }
     }
 
-    .itens_nav{
-
-        & .menu-item,
-        .menu-open-button{
+    .itens_nav {
+        .menu-item,
+        .menu-open-button {
             height: 50px;
             width: 50px;
         }
 
-
-        & .menu-open:checked ~ .menu-item {
+        .menu-open:checked ~ .menu-item {
             height: 110px;
             width: 110px;
         }
     }
-
 }
 
-
-
-/* Até 350 ainda está legivel*/
+/* Extra small devices (up to 350px) */
 @media (max-width: 350px) {
-
+    /* Add specific styles for very small devices */
 }
