@@ -1,6 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
-
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -35,11 +32,11 @@
         <div class="titulo">
             <h1>Criar uma conta</h1>
         </div>
-        <form class="container_inputs" id="input" action="/toyhouse_war/clienteCadastro" method="post">
+        <form class="container_inputs" action="/toyhouse_war/clienteCadastro" method="post">
 
             <div class="input-container">
                 <input required="" type="text">
-                <label class="lab   el"for="input">Nome</label>
+                <label class="label" >Nome</label>
                 <div class="underline"></div>
                 <div class="sideline"></div>
                 <div class="upperline"></div>
@@ -48,7 +45,7 @@
 
             <div class="input-container">
                 <input required=""  type="email">
-                <label class="label" for="input">E-mail</label>
+                <label class="label" >E-mail</label>
                 <div class="underline"></div>
                 <div class="sideline"></div>
                 <div class="upperline"></div>
@@ -57,7 +54,7 @@
 
             <div class="input-container">
                 <input required=""  type="tel">
-                <label class="label" for="input">Telefone</label>
+                <label class="label">Telefone</label>
                 <div class="underline"></div>
                 <div class="sideline"></div>
                 <div class="upperline"></div>
@@ -66,7 +63,7 @@
 
             <div class="input-container">
                 <input required="" type="text">
-                <label class="label" for="input">CPF</label>
+                <label class="label">CPF</label>
                 <div class="underline"></div>
                 <div class="sideline"></div>
                 <div class="upperline"></div>
@@ -75,7 +72,7 @@
 
             <div class="input-container">
                 <input required=""  type="password">
-                <label class="label" for="input">Senha</label>
+                <label class="label">Senha</label>
                 <div class="underline"></div>
                 <div class="sideline"></div>
                 <div class="upperline"></div>
@@ -84,7 +81,7 @@
 
             <div class="input-container">
                 <input required=""  type="password">
-                <label class="label" for="input">Confirmar senha</label>
+                <label class="label" >Confirmar senha</label>
                 <div class="underline"></div>
                 <div class="sideline"></div>
                 <div class="upperline"></div>
@@ -93,11 +90,11 @@
 
             <div class="container_botao">
                 <button>
-                    Cadastrar-se
+                    <a href="#">Cadastrar-se</a>
                 </button>
 
                 <button>
-                    Cancelar
+                    <a href="/toyhouse_war/">Cancelar</a>
                 </button>
             </div>
 
