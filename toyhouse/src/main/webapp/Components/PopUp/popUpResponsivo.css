@@ -1,0 +1,8 @@
+
+/*Para dispositivo Mobile*/
+@media (min-width: 300px) AND (max-width: 520px) {
+
+    .popup-content{
+        max-width: 90%;
+    }
+}

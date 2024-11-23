@@ -1,306 +1,255 @@
-*{
+* {
     padding: 0;
     margin: 0;
-
     font-family: "Ubuntu", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-:root{
-    --cor-menu: #7BC8F6;
-}
 
-
-.header{
+.container_input {
     display: flex;
 
+    justify-content: space-around;
     align-items: center;
-
-    height: 11vh;
-    width: 100%;
-
-    background-color: var(--cor-menu);
-}
-
-
-.header_container{
-    display: flex;
-
-    align-items: center;
-
-    height: 100%;
-    width: 90%;
-}
-
-
-.logo{
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    height: 100%;
-    width: 10%;
-
-    & .imagem{
-        height: 55px;
-        width: 55px;
-    }
-}
-
-
-
-
-
-.container{
-    display: flex;
-
-    justify-content: center;
-    align-items: flex-start;
-
-    background-color: var(--cor-menu);
-
-    height: 89vh;
-    width: 100%;
-}
-
-
-
-.container_formulario{
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
     flex-direction: column;
 
     height: 90%;
-    width: 35em;
+    width: 90%;
 
-    background-color: whitesmoke;
-
-    margin-top: min(-2%);
-    border-radius: 10px;
-
-    & .titulo{
+    & .container_botao {
         display: flex;
 
-        justify-content: center;
         align-items: center;
-
-        height: 6%;
-        width: 90%;
-
-
-        color: #333333;
-        font-size: 17px;
-
-    }
-
-    /*Logo dentro do Forms, só vai aparecer quando o Logo no Header desaparecer*/
-    /**/
-    & .logo_formulario{
-        display: none;
-        align-items: center;
-
-
-        height: auto;
-        width: 90%;
-
-        & .imagem{
-            height: 55px;
-            width: 55px;
-        }
-    }
-
-
-    & .container_inputs{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        height: 75%;
-        width: 90%;
-
-
-        flex-wrap: wrap;
         justify-content: space-around;
-    }
-
-    & .container_botao{
-        display: flex;
-        align-items: flex-end;
 
         height: 10%;
         width: 90%;
 
+        & button {
+            align-items: center;
+            background-color: transparent;
+            cursor: pointer;
+            display: flex;
+            outline: 0;
+            border: 0;
+
+        }
+
+        button:before {
+            background-color: #333333;
+            content: "";
+            display: inline-block;
+            height: 1px;
+            margin-right: 10px;
+            transition: all .42s cubic-bezier(.25, .8, .25, 1);
+            width: 0;
+        }
+
+        button:hover:before {
+            background-color: #333333;
+            width: 3rem;
+        }
+
+        button a {
+            font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.5;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #3C4142;
+        }
     }
 }
 
 
-/*Input*/
 
-/* From Uiverse.io by G4b413l */
-/* From Uiverse.io by Vraj747 */
-.wave-group {
+
+/*INPUT*/
+.input-container {
     position: relative;
+    margin: 20px auto;
+    width: 80%;
 }
 
-.wave-group .input {
-    font-size: 16px;
-    padding: 10px 10px 5px 5px;
-    display: block;
-    min-width: 35%;
+.input-container input[type="text"],
+.input-container input[type="password"],
+.input-container input[type="tel"],
+.input-container input[type="email"],
+.input-container input[type="number"] {
+    font-size: 14px;
+    color: black;
+    /* Cor da escrita */
+    padding-left: 3px;
     border: none;
-    border-bottom: 1px solid #515151;
-    background: transparent;
-}
-
-.wave-group .input:focus {
+    border-bottom: 2px solid #a5a2a2;
     outline: none;
+    width: 100%;
+    height: 25px;
+    /* Tamanho INPUT */
+    background-color: transparent;
 }
 
-.wave-group .label {
-    color: #999;
-    font-size: 14px;
-    font-weight: normal;
+.label {
+    transition: all 0.3s ease;
+    color: #7D7F7C;
+    /* Cor da label antes do foco */
     position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -4px;
+    margin-left: 2px;
     pointer-events: none;
-    left: 5px;
-    top: 10px;
-    display: flex;
 }
 
-.wave-group .label-char {
-    transition: 0.2s ease all;
-    transition-delay: calc(var(--index) * 0.05s);
+/* A label sobe quando o input está focado */
+.input-container input[type="text"]:focus~.label,
+.input-container input[type="password"]:focus~.label,
+.input-container input[type="tel"]:focus~.label,
+.input-container input[type="email"]:focus~.label,
+.input-container input[type="number"]:focus~.label {
+    top: -20px;
+    color: #3C4142;
+    opacity: 1;
 }
 
-.wave-group .input:focus ~ label .label-char,
-.wave-group .input:valid ~ label .label-char {
-    transform: translateY(-20px);
-    font-size: 10px;
-    color: #5264ae;
+/* A label desaparece apenas quando o campo está preenchido */
+.input-container input[type="text"]:valid~.label,
+.input-container input[type="password"]:valid~.label,
+.input-container input[type="tel"]:valid~.label,
+.input-container input[type="email"]:valid~.label,
+.input-container input[type="number"]:valid~.label {
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.wave-group .bar {
-    position: relative;
-    display: block;
-    width: 200px;
-}
-
-.wave-group .bar:before,
-.wave-group .bar:after {
-    content: "";
+.input-container .underline {
+    position: absolute;
+    bottom: 4px;
+    left: -7px;
     height: 2px;
-    width: 0;
-    bottom: 1px;
-    position: absolute;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
+    width: 102%;
+    background-color: rgb(58, 74, 106);
+    /* Linha de baixo */
+    transform: scaleX(0);
+    transition: 1s;
+    /* Adicionado para transição suave */
 }
 
-.wave-group .bar:before {
-    left: 50%;
-}
-
-.wave-group .bar:after {
-    right: 50%;
-}
-
-.wave-group .input:focus ~ .bar:before,
-.wave-group .input:focus ~ .bar:after {
-    width: 50%;
-}
-
-
-
-
-/*Botão*/
-
-/*Botão*/
-.button {
-    min-width: 140px;
-    padding: 0;
-    border: none;
-    transform: rotate(0deg);
-    transform-origin: center;
-    font-family: "Ubuntu", sans-serif;
-    text-decoration: none;
-    font-size: 14px;
-    cursor: pointer;
-    padding-bottom: 3px;
-    border-radius: 5px;
-    box-shadow: 0 2px 0 #494a4b;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    background-color: #7BC8F6;
-}
-
-.button:last-child{
-    margin-left: 20px;
-}
-
-.button span {
-    background: #f1f5f8;
-    display: block;
-    padding: 0.3rem 1.5rem;
-    border-radius: 5px;
-    border: 2px solid #494a4b;
-}
-
-.button:active {
-    transform: translateY(5px);
-    padding-bottom: 0px;
-    outline: 0;
-}
-
-
-
-
-.open-file {
-    background-color: rgb(255, 255, 255);
-    width: 40%;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    border: 1px solid rgb(217, 217, 217);
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 0.3s;
-    border-radius: 10px;
-}
-.file-wrapper {
-    width: 15px;
-    height: auto;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+.input-container .sideline {
     position: relative;
+    bottom: 15px;
+    right: 26px;
+    height: 2px;
+    width: 12%;
+    background-color: rgb(241, 212, 58);
+    /* Linha da esquerda */
+    transform: scaleX(0);
+    rotate: 90deg;
+    transition: 1s;
 }
-.file-wrapper svg {
-    width: 100%;
-}
-.file-front {
+
+.input-container .upperline {
     position: absolute;
-    width: 100%;
-    height: 70%;
-    border: 2px solid rgb(0, 0, 0);
-    border-bottom: 1px solid black;
-    transform: skewX(-40deg);
-    transform-origin: bottom right;
-    background-color: white;
-    transition: all 0.5s;
-    bottom: 0;
+    bottom: 30px;
+    left: -8px;
+    height: 2px;
+    width: 102%;
+    background-color: rgb(35, 178, 218);
+    /* Linha de cima */
+    transform: scaleX(0);
+    transition: 1s;
 }
-.open-file:hover .file-front {
-    height: 50%;
-    transform-origin: bottom right;
-    transform: skewX(-55deg);
+
+.input-container .line {
+    position: relative;
+    bottom: 17px;
+    left: 340px;
+    height: 2px;
+    width: 12%;
+    background-color: rgb(247, 27, 13);
+    /* Linha da direita */
+    transform: scaleX(0);
+    rotate: 90deg;
+    transition: 1s;
 }
-.open-file:hover {
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.048);
+
+/* Mantém as linhas coloridas somente durante o foco */
+.input-container input[type="text"]:focus~.underline,
+.input-container input[type="password"]:focus~.underline,
+.input-container input[type="tel"]:focus~.underline,
+.input-container input[type="email"]:focus~.underline,
+.input-container input[type="number"]:focus~.underline {
+    transform: scaleX(1);
+}
+
+.input-container input[type="text"]:focus~.sideline,
+.input-container input[type="password"]:focus~.sideline,
+.input-container input[type="tel"]:focus~.sideline,
+.input-container input[type="email"]:focus~.sideline,
+.input-container input[type="number"]:focus~.sideline {
+    transform: scaleX(1);
+}
+
+.input-container input[type="text"]:focus~.upperline,
+.input-container input[type="password"]:focus~.upperline,
+.input-container input[type="tel"]:focus~.upperline,
+.input-container input[type="email"]:focus~.upperline,
+.input-container input[type="number"]:focus~.upperline {
+    transform: scaleX(1);
+}
+
+.input-container input[type="text"]:focus~.line,
+.input-container input[type="password"]:focus~.line,
+.input-container input[type="tel"]:focus~.line,
+.input-container input[type="email"]:focus~.line,
+.input-container input[type="number"]:focus~.line {
+    transform: scaleX(1);
+}
+
+
+
+
+
+
+/*TEXT AREA*/
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 5px;
+    color: #7D7F7C;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    padding: 10px 5px;
+    color: black;
+
+    height: 35px;
+    min-height: 30px;
+    max-height: 80px;
+
+    width: 98%;
+    /*Como deve estar por padrão*/
+    min-width: 90%;
+    max-width: 100%;
+
+    border:none;
+    border-bottom: 1px solid #414141;
+    background-color: transparent;
+}
+
+
+.form-group textarea:focus {
+    outline: none;
+    border: rgb(35, 178, 218) solid 2px;
 }

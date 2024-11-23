@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --cor-menu: #7BC8F6;
+}
+
+
+.header {
+    display: flex;
+
+    align-items: center;
+
+    height: 11vh;
+    width: 100%;
+
+    background-color: var(--cor-menu);
+}
+
+
+.header_content {
+    display: flex;
+
+    align-items: center;
+
+    height: 100%;
+    width: 90%;
+}
+
+
+.logo {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 10%;
+
+    & .imagem {
+        height: 55px;
+        width: 55px;
+    }
+}
+
+
+.container {
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    background-color: var(--cor-menu);
+
+    height: 89vh;
+    width: 100%;
+}
+
+
+
+.content {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    height: 90%;
+    width: 32em;
+
+
+    background-color: whitesmoke;
+
+    margin-top: min(-2%);
+    border-radius: 10px;
+
+    & .titulo {
+        display: flex;
+
+        justify-content: center;
+        align-items: flex-end;
+
+        height: 10%;
+        width: 90%;
+
+        color: #333333;
+        font-size: 17px;
+
+    }
+
+    /*Logo dentro do Forms, só vai aparecer quando o Logo no Header desaparecer*/
+    & .logo_content {
+        display: none;
+        align-items: center;
+
+
+        height: auto;
+        width: 100%;
+
+        & .imagem {
+            height: 55px;
+            width: 55px;
+        }
+    }
+}

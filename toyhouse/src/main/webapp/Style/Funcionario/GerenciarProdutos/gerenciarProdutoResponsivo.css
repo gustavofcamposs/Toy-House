@@ -1,0 +1,148 @@
+@media (min-width: 850px) AND (max-width: 940px) {
+
+    #contentInterface {
+        width: 40em;
+    }
+}
+
+
+
+@media (min-width: 720px) AND (max-width: 850px) {
+
+    #contentInterface {
+        width: 36em;
+    }
+
+    .titulo-produto {
+        & p {
+            font-size: 12px;
+        }
+    }
+}
+
+
+@media (min-width: 590px) AND (max-width: 720px) {
+
+
+    /*Container PAI*/
+
+    .container {
+        height: 100vh;
+    }
+
+    #contentInterface {
+        width: 85%;
+    }
+
+    .container-box {
+
+        & .box {
+            margin-top: 55px;
+        }
+    }
+
+
+    .titulo-produto {
+        & p {
+            font-size: 11px;
+        }
+    }
+}
+
+
+
+@media (min-width: 520px) AND (max-width: 590px) {
+
+    .container {
+        width: 100%;
+    }
+
+    #contentInterface {
+        width: 100%;
+        /*background-color: peru;*/
+    }
+
+    .search {
+        height: 10%;
+    }
+
+    .container-box {
+
+        & .box {
+            margin-top: 50px;
+            width: 45%;
+
+            & .content-box {
+                width: 100%;
+            }
+        }
+    }
+
+    .titulo-produto {
+        & p {
+            font-size: 9px;
+        }
+    }
+}
+
+
+
+@media (min-width: 300px) AND (max-width: 520px) {
+
+
+    .btn-class-name {
+        height: 16px;
+        width: 16px;
+        margin-left: 24px;
+    }
+
+    .search {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        height: 12%;
+        margin-top: 35px;
+    }
+
+    .input__container {
+        width: 100%;
+    }
+
+    .container-box {
+        & .box {
+            margin-top: 50px;
+            height: 200px;
+            width: 85%;
+        }
+    }
+
+    .popup-content{
+        & .titulo{
+            font-size: 10px;
+        }
+    }
+
+    /*Arrumando a altura nos aparelhos mobile*/
+
+    @media (max-height: 800px) {
+
+        .search {
+            height: 20%;
+        }
+    }
+
+    @media (max-height: 650px) {
+
+        .search {
+            height: 25%;
+        }
+    }
+
+
+    @media (max-height: 483px) {
+
+        .search {
+            height: 35%;
+        }
+    }
+}

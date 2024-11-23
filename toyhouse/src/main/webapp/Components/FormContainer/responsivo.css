@@ -1,0 +1,118 @@
+/* ==================================================
+   Telas extra grandes (largura mínima de 1800px)*/
+@media (min-width: 1800px) {}
+
+
+
+
+
+/*===================================================
+   Desktops (largura entre 1200px e 1799px)*/
+@media (min-width: 1200px) and (max-width: 1799px) {}
+
+
+
+
+
+/* ==================================================
+   Tablets/notebooks grandes (largura entre 970px e 1199px)*/
+@media (min-width: 970px) and (max-width: 1199px) {
+    .content {
+        margin-top: -3%;
+    }
+}
+
+
+
+
+
+/* ==================================================
+   Tablets pequenos (largura entre 720px e 970px)*/
+@media (min-width: 720px) and (max-width: 970px) {
+    .content {
+        margin-top: -6.4%;
+    }
+}
+
+
+
+
+
+/* ===================================================
+   Dispositivos médios e parte do mobile (largura entre 590px e 720px)*/
+@media (min-width: 590px) and (max-width: 720px) {
+
+    .logo {
+        display: none;
+    }
+
+    .content {
+        margin-top: -6%;
+
+        /* Mostra a logo dentro do formulário */
+        & .logo_content {
+            display: flex;
+        }
+    }
+}
+
+
+
+
+
+/* ===================================================
+   Mobile pequeno (largura menor que 590px)*/
+
+/*O formulário cobre 100% da tela e elementos são ajustados para responsividade*/
+@media (max-width: 590px) {
+    .container_botao {
+        margin-top: 0;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .container {
+        height: 100vh;
+    }
+
+    .content {
+        justify-content: flex-start;
+        max-width: 95%;
+        height: 100%;
+
+        & .logo_content {
+            display: flex;
+            align-items: flex-end;
+            height: 10%;
+
+            & .imagem {
+                height: 45px;
+                width: 45px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 400px) {
+    .input-container .line {
+        left: 200px;
+    }
+}
+
+
+/* =======================================================================
+   Ajustes para tablets com altura mínima de 1025px
+   ======================================================================= */
+@media (min-height: 1025px) {
+    .content {
+        max-height: 80%;
+        width: 35em;
+    }
+}
