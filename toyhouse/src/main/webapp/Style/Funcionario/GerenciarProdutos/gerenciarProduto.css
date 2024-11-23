@@ -1,0 +1,357 @@
+/*Referente ao componente, criei esse ID para poder fazer uma leve modificação em sua largura, que deve ser modifica nos demais
+layouts responsívo.*/
+#contentInterface {
+    width: 45em;
+}
+
+
+
+.search {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+
+    height: 12%;
+    width: 90%;
+
+    margin-top: 20px;
+}
+
+
+
+/*INPUT de Procurar*/
+.input__container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.664);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 22px;
+    transition: transform 400ms;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(-20deg);
+    perspective: 500px;
+    min-width: 65%;
+
+
+    & .shadow__input {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        filter: blur(30px);
+        border-radius: 20px;
+        background-color: #999cff;
+        background-image: radial-gradient(at 85% 51%, hsla(60, 60%, 61%, 1) 0px, transparent 50%),
+        radial-gradient(at 74% 68%, hsla(235, 69%, 77%, 1) 0px, transparent 50%),
+        radial-gradient(at 64% 79%, hsla(284, 72%, 73%, 1) 0px, transparent 50%),
+        radial-gradient(at 75% 16%, hsla(283, 60%, 72%, 1) 0px, transparent 50%),
+        radial-gradient(at 90% 65%, hsla(153, 70%, 64%, 1) 0px, transparent 50%),
+        radial-gradient(at 91% 83%, hsla(283, 74%, 69%, 1) 0px, transparent 50%),
+        radial-gradient(at 72% 91%, hsla(213, 75%, 75%, 1) 0px, transparent 50%);
+    }
+
+    & .input__button__shadow {
+        cursor: pointer;
+        border: none;
+        background: none;
+        transition: transform 400ms, background 400ms;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+        padding: 5px;
+    }
+
+    & .input__button__shadow:hover {
+        background: rgba(255, 255, 255, 0.411);
+    }
+
+    & .input__search {
+        width: 100%;
+        border-radius: 20px;
+        outline: none;
+        border: none;
+        padding: 8px;
+        position: relative;
+    }
+}
+
+
+
+
+
+.container-box {
+    display: flex;
+
+    justify-content: space-around;
+
+    flex-wrap: wrap;
+
+    height: 80%;
+    width: 90%;
+
+    overflow: auto;
+    /*Criar um Scroll na div após ultrapassar o tamanho dela*/
+
+
+    & .box {
+        display: flex;
+
+        flex-direction: column;
+        align-items: center;
+
+        height: 185px;
+        width: 45%;
+
+        margin-top: 40px;
+
+
+        /*Container aonde fica a imagem e o Nome do Produto*/
+        & .content-box {
+            display: flex;
+
+            height: 55%;
+            width: 95%;
+
+            background-color: #FEFEFE;
+            border-radius: 15px;
+            margin-top: 5px;
+
+
+            & .imagem {
+                display: flex;
+
+                align-items: center;
+
+                height: 100%;
+                width: 40%;
+
+                /*border: red solid 1px;*/
+
+                /*Acompanhar a borda do content-box*/
+                border-top-left-radius: 15px;
+                border-bottom-left-radius: 15px;
+
+                & .imagem-produto {
+                    height: 95%;
+                    width: 95%;
+
+                    /*Acompanhar a borda do content-box*/
+                    border-top-left-radius: 15px;
+                    border-bottom-left-radius: 15px;
+                }
+            }
+
+            & .titulo-produto {
+                height: 100%;
+                width: 60%;
+
+                /*border: #999cff solid 1px;*/
+
+                /*Acompanhar a borda do content-box*/
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+
+                font-size: 13px;
+                color: #343837;
+
+                p {
+                    margin-top: 5px;
+                    font-weight: bolder;
+                }
+            }
+        }
+    }
+
+
+    & .container-botao {
+        display: flex;
+
+        align-items: center;
+        justify-content: space-around;
+
+        height: 45%;
+        width: 95%;
+        border-radius: 15px;
+    }
+}
+
+
+
+/*Configuração do Botão*/
+.botao {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 40%;
+    height: 30px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+
+    color: white;
+    background-color: #343837;
+
+    border: none;
+    border-radius: .6rem;
+
+    position: relative;
+
+    cursor: pointer;
+    overflow: hidden;
+
+    & a{
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.botao span:not(:nth-child(6)) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transition: .6s ease;
+}
+
+#button1 span:not(:nth-child(6)) {
+    background-color: #FFA62B;
+}
+
+#button2 span:not(:nth-child(6)) {
+    background-color: #F71B0E;
+}
+
+
+
+
+.botao span:nth-child(6) {
+    position: relative;
+}
+
+.botao span:nth-child(1) {
+    transform: translate(-3.3em, -4em);
+}
+
+.botao span:nth-child(2) {
+    transform: translate(-6em, 1.3em);
+}
+
+.botao span:nth-child(3) {
+    transform: translate(-.2em, 1.8em);
+}
+
+.botao span:nth-child(4) {
+    transform: translate(3.5em, 1.4em);
+}
+
+.botao span:nth-child(5) {
+    transform: translate(3.5em, -3.8em);
+}
+
+.botao:hover span:not(:nth-child(6)) {
+    transform: translate(-50%, -50%) scale(4);
+    transition: 1.5s ease;
+}
+
+
+
+
+.btn-class-name {
+    --primary: 255, 90, 120;
+    --secondary: 150, 50, 60;
+    width: 25px;
+    height: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+    outline: 10px solid rgb(var(--primary), .5);
+    border-radius: 100%;
+    position: relative;
+    transition: .3s;
+}
+
+.btn-class-name .back {
+    background: rgb(var(--secondary));
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-class-name .front {
+    background: linear-gradient(0deg, rgba(var(--primary), .6) 20%, rgba(var(--primary)) 50%);
+    box-shadow: 0 .5em 1em -0.2em rgba(var(--secondary), .5);
+    border-radius: 100%;
+    position: absolute;
+    border: 1px solid rgb(var(--secondary));
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: inherit;
+    transform: translateY(-15%);
+    transition: .15s;
+    color: rgb(var(--secondary));
+}
+
+.btn-class-name:active .front {
+    transform: translateY(0%);
+    box-shadow: 0 0;
+}
+
+
+
+
+/*POPUP personalizado além do Component*/
+
+.popup-content {
+    min-height: 12em;
+
+    & .titulo{
+        height: auto;
+        width: 90%;
+
+        font-size: 14px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    & .botoes{
+        display: flex;
+
+        justify-content: space-around;
+        align-items: center;
+
+        height: 50px;
+        width: 90%;
+
+        & #popUp-excluir1 span:not(:nth-child(6)) {
+            background-color: #82A67D;
+        }
+
+        & #popUp-excluir2 span:not(:nth-child(6)) {
+            background-color: #F71B0E;
+        }
+    }
+}

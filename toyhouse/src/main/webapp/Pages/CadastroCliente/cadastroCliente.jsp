@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="<%= request.getContextPath() %>/Style/CadastroCliente/cadastroCliente.css">
     <link rel="stylesheet" href="<%= request.getContextPath() %>/Style/CadastroCliente/cadastroClienteResponsivo.css">
+
+    <!--Importando o Componente-->
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/Components/FormContainer/container.css">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/Components/FormContainer/responsivo.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,31 +17,32 @@
           rel="stylesheet">
     <title>Cadastro Cliente</title>
 </head>
+
 <body>
 
 <header class="header">
-    <div class="header_container">
+    <div class="header_content">
         <div class="logo">
-            <a href="/toyhouse_war/"> <!-- Link para a página inicial -->
-                <img class="imagem" src="<%= request.getContextPath() %>/Images/Home/ToyHouseLogo.jpg" alt="Logotipo ToyHouse">
+            <a href="/toyhouse_war"> <!-- Link para a página inicial -->
+                <img class="imagem" src="<%= request.getContextPath() %>/Images/LogoToyHouse/ToyHouseLogo.jpg" alt="Logotipo ToyHouse">
             </a>
         </div>
     </div>
 </header>
 <div class="container">
-    <div class="container_formulario">
-        <div class="logo_formulario">
-            <a href="/toyhouse_war/"><img class="imagem" src="<%= request.getContextPath() %>/Images/Home/ToyHouseLogo.jpg" alt="Logotipo ToyHouse"></a>
+    <div class="content">
+        <div class="logo_content">
+            <img class="imagem" src="<%= request.getContextPath() %>/Images/LogoToyHouse/ToyHouseLogo.jpg" alt="Logotipo ToyHouse">
         </div>
 
         <div class="titulo">
             <h1>Criar uma conta</h1>
         </div>
-        <form class="container_inputs" action="/toyhouse_war/clienteCadastro" method="post">
+        <form class="container_inputs" action="" method="post">
 
             <div class="input-container">
                 <input required="" type="text">
-                <label class="label" >Nome</label>
+                <label class="label">Nome</label>
                 <div class="underline"></div>
                 <div class="sideline"></div>
                 <div class="upperline"></div>
@@ -45,7 +51,7 @@
 
             <div class="input-container">
                 <input required=""  type="email">
-                <label class="label" >E-mail</label>
+                <label class="label">E-mail</label>
                 <div class="underline"></div>
                 <div class="sideline"></div>
                 <div class="upperline"></div>
@@ -81,7 +87,7 @@
 
             <div class="input-container">
                 <input required=""  type="password">
-                <label class="label" >Confirmar senha</label>
+                <label class="label">Confirmar senha</label>
                 <div class="underline"></div>
                 <div class="sideline"></div>
                 <div class="upperline"></div>
@@ -94,7 +100,7 @@
                 </button>
 
                 <button>
-                    <a href="/toyhouse_war/">Cancelar</a>
+                    <a href="/toyhouse_war">Cancelar</a>
                 </button>
             </div>
 

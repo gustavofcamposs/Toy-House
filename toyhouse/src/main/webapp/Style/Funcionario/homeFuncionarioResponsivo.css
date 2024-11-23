@@ -1,0 +1,50 @@
+@media (min-height: 1000px){
+    .radio-inputs{
+        max-height: 15%;
+    }
+}
+
+
+@media (min-width: 650px) and (max-width: 1025px){
+
+    .container{
+
+        & .header{
+            width: 35em;
+        }
+    }
+}
+
+
+@media (min-width: 500px) and (max-width: 650px){
+
+    .container{
+
+        & .header{
+            width: 55em;
+        }
+    }
+
+    .radio-inputs{
+        width: 80%;
+    }
+}
+
+
+@media (min-width: 350px) and (max-width: 500px){
+
+    .container{
+
+        & .main{
+            width: 0;
+        }
+
+        & .header{
+            width: 100em;
+        }
+    }
+
+    .radio-inputs{
+        width: 80%;
+    }
+}
