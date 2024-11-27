@@ -31,7 +31,7 @@
 
             <label class="radio">
                 <input type="radio" name="radio">
-                <span class="name">Relatório de Vendas</span>
+                <a href="./RelatorioDeVendas/relatorioDeVendas.jsp"><span class="name">Relatório de Vendas</span></a>
             </label>
 
             <label class="radio">
