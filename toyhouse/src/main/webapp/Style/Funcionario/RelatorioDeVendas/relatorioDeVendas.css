@@ -1,0 +1,343 @@
+body h1, h2, h3, p, a{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#content_personalizado{
+    width: 60em;
+}
+
+
+.container_filtro{
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    height: 12%;
+    width: 90%;
+}
+
+
+.main{
+    display: flex;
+
+    align-items: flex-start;
+    flex-direction: column;
+
+    height: 80%;
+    width: 90%;
+
+    /*border: red solid 1px;*/
+
+    & .main-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        height: 85%;
+        width: 100%;
+
+        /*border: red solid 1px*/
+    }
+
+
+    /*Div que vai mostrar o valor mensal do Relatório*/
+    & .container_valor_total{
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        height: 15%;
+        width: 100%;
+
+        & .conteudo{
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            background-color: #FDFDFE;
+
+            width: 55%;
+            height: 90%;
+            border-radius: 15px;
+
+            & h1{
+                font-size: 25px;
+                color: #373737;
+            }
+
+            & p{
+                color: #373737;
+                font-size: 19px;
+            }
+        }
+    }
+}
+
+
+#box2_personalizada{
+    background-color: #fdfdfe;
+
+    & p{
+        color: whitesmoke;
+    }
+}
+
+.box{
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    height: 85%;
+    width: 40%;
+
+    border-radius: 20px;
+
+    overflow: auto; /*Scroll*/
+
+    /*border: gold solid 1px;*/
+
+    & #item2-personalizado{
+        min-height: 150px;
+        max-height: 150px;
+        background-color: #373737;
+    }
+
+    & .item{
+        display: flex;
+
+        align-items: center;
+
+        min-height: 120px;
+        max-height: 120px;
+        width: 90%;
+
+        background-color: #FDFDFE;
+        border-radius: 5px;
+
+        margin-top: 25px;
+
+        & .info{
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-around;
+
+            height: 80%;
+            width: 60%;
+
+            color: #373737;
+            font-size: 13px;
+
+            & p{
+                margin-left: 12px;
+            }
+        }
+
+        & .opcao-radio{
+            display: flex;
+
+            align-items: center;
+            justify-content: flex-start;
+
+            height: 35%;
+            width: 40%;
+
+            background-color: white;
+
+            border-radius: 15px;
+        }
+    }
+}
+
+.box::-webkit-scrollbar {
+    display: none; /* Esconde a barra de rolagem */
+}
+
+
+
+
+
+
+
+
+
+/*Botão voltar*/
+.btn-class-name {
+    --primary: 255, 90, 120;
+    --secondary: 150, 50, 60;
+    width: 24px;
+    height: 24px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+    outline: 10px solid rgb(var(--primary), .5);
+    border-radius: 100%;
+    position: relative;
+    transition: .3s;
+
+    margin-left: 10px;
+}
+
+.btn-class-name .back {
+    background: rgb(var(--secondary));
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-class-name .front {
+    background: linear-gradient(0deg, rgba(var(--primary), .6) 20%, rgba(var(--primary)) 50%);
+    box-shadow: 0 .5em 1em -0.2em rgba(var(--secondary), .5);
+    border-radius: 100%;
+    position: absolute;
+    border: 1px solid rgb(var(--secondary));
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: inherit;
+    transform: translateY(-15%);
+    transition: .15s;
+    color: rgb(var(--secondary));
+}
+
+.btn-class-name:active .front {
+    transform: translateY(0%);
+    box-shadow: 0 0;
+}
+
+
+
+
+
+
+
+
+.forms-data{
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    height: 100%;
+    width: 85%;
+}
+
+
+/*INPUT DE DATE*/
+.dateInput {
+    margin-left: auto;
+    margin-right: auto;
+    height: 35px;
+    width: 14.0em;
+    border-radius: 2.5em;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    -webkit-filter: drop-shadow(1px 1px 10px #000);
+    filter: drop-shadow(7px 7px 10px #00000059);
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(77, 77, 77);
+    text-align: center;
+    font-size: 14px;
+    outline: 2px solid rgba(0, 0, 0, 0);
+    transition: outline-offset 0.5s ease, outline-color 0.5s ease,
+    height 0.5s ease, width 0.5s ease, filter 0.5s ease;
+}
+
+.dateInput:nth-child(1){
+    margin-left: 30px;
+}
+
+#dateDiv:nth-of-type(2) .dateInput:valid {
+    transition: 0.2s;
+    width: 10em;
+}
+
+.dateInput:focus::placeholder {
+    color: transparent; /* Torna o placeholder invisível */
+    transition: color 0.2s; /* Animação suave para desaparecer */
+}
+
+
+.dateInput::placeholder {
+    padding-left: 0.8em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transform: translateX(-6px);
+    transition: transform 0.5s ease;
+}
+
+.dateInput:focus::placeholder {
+    transform: translateX(-85px);
+    transition: 0.5s;
+}
+
+
+/*RADIO*/
+
+.radio-button {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 1px;
+    align-items: center;
+    color: #373737;
+    font-size: 12px;
+}
+
+.radio-button input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.radio {
+    position: relative;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    transform: translateZ(-25px);
+    transition: all 0.3s ease-in-out;
+}
+
+.radio::before {
+    position: relative;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.radio-button input[type="radio"]:checked + .radio {
+    border-color: #ee99a8;
+    transform: translateZ(0px);
+    background-color: #fff;
+}
+
+.radio-button input[type="radio"]:checked + .radio::before {
+    opacity: 1;
+}
