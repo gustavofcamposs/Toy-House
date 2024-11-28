@@ -1,15 +1,15 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
 
 /* Menu Principal*/
-.header{
+.header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,7 +19,8 @@ html{
 
     background-color: #7BC8F6;
     background-image: none;
-    transition: background-color 2s, background-image 2s, opacity 2s;/* Define transições para ambas as propriedades */
+    transition: background-color 2s, background-image 2s, opacity 2s;
+    /* Define transições para ambas as propriedades */
 }
 
 
@@ -28,14 +29,17 @@ html{
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative; /* Necessário para o posicionamento do ::before */
+    position: relative;
+    /* Necessário para o posicionamento do ::before */
 
     height: 11vh;
     width: 100%;
 
-    background-color: #7BC8F6; /* Inicialmente Azul */
+    background-color: #7BC8F6;
+    /* Inicialmente Azul */
     transition: background-color 1s;
-    z-index: 1; /* Garante que o conteúdo original fique no topo */
+    z-index: 1;
+    /* Garante que o conteúdo original fique no topo */
 }
 
 
@@ -47,33 +51,40 @@ html{
     height: 100%;
 
     /* A imagem de transição */
-    background-image: radial-gradient(circle 8px at 92% 63%, rgb(241,17,255) 0%,transparent 22%),radial-gradient(circle 2px at 73% 80%, rgb(51,197,244) 0%,transparent 60%),radial-gradient(circle 2px at 88% 58%, rgb(51,197,244) 0%,transparent 5%),radial-gradient(circle 2px at 39% 24%, rgb(51,197,244) 0%,transparent 17%),radial-gradient(circle 2px at 31% 10%, rgb(51,197,244) 0%,transparent 83%),radial-gradient(circle 2px at 25% 64%, rgb(51,197,244) 0%,transparent 65%),radial-gradient(circle 2px at 46% 18%, rgb(51,197,244) 0%,transparent 86%),radial-gradient(circle 2px at 27% 89%, rgb(51,197,244) 0%,transparent 61%),radial-gradient(circle 2px at 72% 43%, rgb(51,197,244) 0%,transparent 46%),radial-gradient(circle 2px at 73% 2%, rgb(51,197,244) 0%,transparent 87%),radial-gradient(circle 5px at 94% 33%, rgb(182,182,75) 0%,transparent 93%),radial-gradient(circle 5px at 35% 87%, rgb(182,182,75) 0%,transparent 42%),radial-gradient(circle 4px at 78% 1%, rgb(255,247,20) 0%,transparent 76%),radial-gradient(circle 4px at 71% 51%, rgb(255,247,20) 0%,transparent 69%),radial-gradient(circle 4px at 26% 45%, rgb(255,247,20) 0%,transparent 83%),linear-gradient(90deg, rgb(52,56,55) 0%, rgb(52,56,55) 50%,rgb(52,56,55) 50%, rgb(52,56,55) 100%); background-size: 278px 278px;
+    background-image: radial-gradient(circle 8px at 92% 63%, rgb(241, 17, 255) 0%, transparent 22%), radial-gradient(circle 2px at 73% 80%, rgb(51, 197, 244) 0%, transparent 60%), radial-gradient(circle 2px at 88% 58%, rgb(51, 197, 244) 0%, transparent 5%), radial-gradient(circle 2px at 39% 24%, rgb(51, 197, 244) 0%, transparent 17%), radial-gradient(circle 2px at 31% 10%, rgb(51, 197, 244) 0%, transparent 83%), radial-gradient(circle 2px at 25% 64%, rgb(51, 197, 244) 0%, transparent 65%), radial-gradient(circle 2px at 46% 18%, rgb(51, 197, 244) 0%, transparent 86%), radial-gradient(circle 2px at 27% 89%, rgb(51, 197, 244) 0%, transparent 61%), radial-gradient(circle 2px at 72% 43%, rgb(51, 197, 244) 0%, transparent 46%), radial-gradient(circle 2px at 73% 2%, rgb(51, 197, 244) 0%, transparent 87%), radial-gradient(circle 5px at 94% 33%, rgb(182, 182, 75) 0%, transparent 93%), radial-gradient(circle 5px at 35% 87%, rgb(182, 182, 75) 0%, transparent 42%), radial-gradient(circle 4px at 78% 1%, rgb(255, 247, 20) 0%, transparent 76%), radial-gradient(circle 4px at 71% 51%, rgb(255, 247, 20) 0%, transparent 69%), radial-gradient(circle 4px at 26% 45%, rgb(255, 247, 20) 0%, transparent 83%), linear-gradient(90deg, rgb(52, 56, 55) 0%, rgb(52, 56, 55) 50%, rgb(52, 56, 55) 50%, rgb(52, 56, 55) 100%);
+    background-size: 278px 278px;
 
-    opacity: 0; /* Inicialmente invisível */
+    opacity: 0;
+    /* Inicialmente invisível */
 
-    transition: opacity 1s; /* Transição suave de opacidade */
+    transition: opacity 1s;
+    /* Transição suave de opacidade */
 
-    z-index: -1; /* Certifique-se de que o ::before fique abaixo do conteúdo */
+    z-index: -1;
+    /* Certifique-se de que o ::before fique abaixo do conteúdo */
 
-    &  .itens_nav{
+    & .itens_nav {
 
-        & li, a{
+        & li,
+        a {
             color: red;
         }
     }
 }
 
 .header:has(.input__search:focus) {
-    background-color: rgba(123, 200, 246, 0); /* Tornar a cor de fundo transparente */
+    background-color: rgba(123, 200, 246, 0);
+    /* Tornar a cor de fundo transparente */
 }
 
 .header:has(.input__search:focus)::before {
-    opacity: 1; /* Tornar a imagem visível */
+    opacity: 1;
+    /* Tornar a imagem visível */
 }
 
 
 
-.nav_header{
+.nav_header {
     display: flex;
 
     align-items: center;
@@ -84,7 +95,7 @@ html{
 }
 
 
-.logo{
+.logo {
     display: flex;
 
     align-items: center;
@@ -93,7 +104,7 @@ html{
     height: 90%;
     width: 80px;
 
-    & .imagem{
+    & .imagem {
         height: 55px;
         width: 55px;
     }
@@ -101,7 +112,7 @@ html{
 
 
 
-.container_search{
+.container_search {
     display: flex;
 
     align-items: center;
@@ -109,6 +120,7 @@ html{
 
     height: 90%;
     width: 40%;
+
 }
 
 
@@ -144,16 +156,16 @@ html{
         filter: blur(30px);
         border-radius: 20px;
         background-color: #999cff;
-        background-image: radial-gradient(at 85% 51%, hsla(60,60%,61%,1) 0px, transparent 50%),
-        radial-gradient(at 74% 68%, hsla(235,69%,77%,1) 0px, transparent 50%),
-        radial-gradient(at 64% 79%, hsla(284,72%,73%,1) 0px, transparent 50%),
-        radial-gradient(at 75% 16%, hsla(283,60%,72%,1) 0px, transparent 50%),
-        radial-gradient(at 90% 65%, hsla(153,70%,64%,1) 0px, transparent 50%),
-        radial-gradient(at 91% 83%, hsla(283,74%,69%,1) 0px, transparent 50%),
-        radial-gradient(at 72% 91%, hsla(213,75%,75%,1) 0px, transparent 50%);
+        background-image: radial-gradient(at 85% 51%, hsla(60, 60%, 61%, 1) 0px, transparent 50%),
+        radial-gradient(at 74% 68%, hsla(235, 69%, 77%, 1) 0px, transparent 50%),
+        radial-gradient(at 64% 79%, hsla(284, 72%, 73%, 1) 0px, transparent 50%),
+        radial-gradient(at 75% 16%, hsla(283, 60%, 72%, 1) 0px, transparent 50%),
+        radial-gradient(at 90% 65%, hsla(153, 70%, 64%, 1) 0px, transparent 50%),
+        radial-gradient(at 91% 83%, hsla(283, 74%, 69%, 1) 0px, transparent 50%),
+        radial-gradient(at 72% 91%, hsla(213, 75%, 75%, 1) 0px, transparent 50%);
     }
 
-    &   .input__button__shadow {
+    & .input__button__shadow {
         cursor: pointer;
         border: none;
         background: none;
@@ -165,11 +177,11 @@ html{
         padding: 5px;
     }
 
-    &  .input__button__shadow:hover {
+    & .input__button__shadow:hover {
         background: rgba(255, 255, 255, 0.411);
     }
 
-    &  .input__search {
+    & .input__search {
         width: 100%;
         border-radius: 20px;
         outline: none;
@@ -181,7 +193,7 @@ html{
 
 
 
-.itens_nav{
+.itens_nav {
     display: flex;
 
     align-items: center;
@@ -199,7 +211,7 @@ html{
 
 
 /* Menu */
-.menu{
+.menu {
     display: flex;
 
     justify-content: space-around;
@@ -224,7 +236,7 @@ html{
 }
 
 
-.menu-item{
+.menu-item {
     display: flex;
 
     align-items: center;
@@ -234,7 +246,12 @@ html{
 }
 
 /*Começa none e só aparece quando o menu for checado*/
-.blue, .lightblue, .orange, .purple, .red, .green{
+.blue,
+.lightblue,
+.orange,
+.purple,
+.red,
+.green {
     display: none;
 }
 
@@ -263,10 +280,12 @@ html{
     -webkit-transform: translate3d(0, -8px, 0);
     transform: translate3d(0, -8px, 0);
 }
+
 .line-2 {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
+
 .line-3 {
     -webkit-transform: translate3d(0, 8px, 0);
     transform: translate3d(0, 8px, 0);
@@ -274,17 +293,17 @@ html{
 
 
 
-.menu-open:checked + .menu-open-button .line-1 {
+.menu-open:checked+.menu-open-button .line-1 {
     -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
     transform: translate3d(0, 0, 0) rotate(45deg);
 }
 
-.menu-open:checked + .menu-open-button .line-2 {
+.menu-open:checked+.menu-open-button .line-2 {
     -webkit-transform: translate3d(0, 0, 0) scale(0.1, 1);
     transform: translate3d(0, 0, 0) scale(0.1, 1);
 }
 
-.menu-open:checked + .menu-open-button .line-3 {
+.menu-open:checked+.menu-open-button .line-3 {
     -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
     transform: translate3d(0, 0, 0) rotate(-45deg);
 }
@@ -344,13 +363,19 @@ html{
 
 }
 
-.menu-open-button, .blue, .lightblue, .orange, .purple, .red, .green{
+.menu-open-button,
+.blue,
+.lightblue,
+.orange,
+.purple,
+.red,
+.green {
     transform: scale(0.5, 0.5) translate3d(0, 0, 0);
 
 }
 
 /*Fechar itens Menu*/
-.menu-open:checked + .menu-open-button {
+.menu-open:checked+.menu-open-button {
     -webkit-transition-timing-function: linear;
     transition-timing-function: linear;
     -webkit-transition-duration: 200ms;
@@ -359,8 +384,9 @@ html{
     transform: scale(0.5, 0.5) translate3d(0, 0, 0);
 }
 
-.menu-open:checked ~ .menu-item {
-    display: flex; /*Para as bolinhas aparecerem*/
+.menu-open:checked~.menu-item {
+    display: flex;
+    /*Para as bolinhas aparecerem*/
 
     width: 150px;
     height: 150px;
@@ -370,43 +396,56 @@ html{
 }
 
 
-.menu-open:checked ~ .menu-item:nth-child(3) { /*Azul*/
+.menu-open:checked~.menu-item:nth-child(3) {
+    /*Azul*/
     transition-duration: 180ms;
     -webkit-transition-duration: 180ms;
-    margin-top: 180px; /*Margin para os filhos não ficarem grudados*/
+    margin-top: 180px;
+    /*Margin para os filhos não ficarem grudados*/
 }
 
-.menu-open:checked ~ .menu-item:nth-child(4) { /*VERDE*/
+.menu-open:checked~.menu-item:nth-child(4) {
+    /*VERDE*/
     transition-duration: 280ms;
     -webkit-transition-duration: 280ms;
-    margin-top: 360px; /*Margin para os filhos não ficarem grudados*/
+    margin-top: 360px;
+    /*Margin para os filhos não ficarem grudados*/
 }
 
-.menu-open:checked ~ .menu-item:nth-child(5) { /*ROSA*/
+.menu-open:checked~.menu-item:nth-child(5) {
+    /*ROSA*/
     transition-duration: 380ms;
     -webkit-transition-duration: 380ms;
-    margin-top: 540px; /*Margin para os filhos não ficarem grudados*/
+    margin-top: 540px;
+    /*Margin para os filhos não ficarem grudados*/
 }
 
-.menu-open:checked ~ .menu-item:nth-child(6) { /*ROXO*/
+.menu-open:checked~.menu-item:nth-child(6) {
+    /*ROXO*/
     transition-duration: 480ms;
     -webkit-transition-duration: 480ms;
-    margin-top: 720px; /*Margin para os filhos não ficarem grudados*/
+    margin-top: 720px;
+    /*Margin para os filhos não ficarem grudados*/
 }
 
-.menu-open:checked ~ .menu-item:nth-child(7) { /*ORANGE*/
+.menu-open:checked~.menu-item:nth-child(7) {
+    /*ORANGE*/
     transition-duration: 580ms;
     -webkit-transition-duration: 580ms;
-    margin-top: 900px; /*Margin para os filhos não ficarem grudados*/
+    margin-top: 900px;
+    /*Margin para os filhos não ficarem grudados*/
 }
 
-.menu-open:checked ~ .menu-item:nth-child(8) { /* AZUL CLARO*/
+.menu-open:checked~.menu-item:nth-child(8) {
+    /* AZUL CLARO*/
     transition-duration: 680ms;
     -webkit-transition-duration: 680ms;
-    margin-top: 1080px; /*Margin para os filhos não ficarem grudados*/
+    margin-top: 1080px;
+    /*Margin para os filhos não ficarem grudados*/
 }
 
-.menu-open:checked ~ .menu-item:nth-child(9) { /*?*/
+.menu-open:checked~.menu-item:nth-child(9) {
+    /*?*/
     transition-duration: 780ms;
     -webkit-transition-duration: 780ms;
 }
@@ -522,19 +561,22 @@ html{
 .input-container input[type="email"],
 .input-container input[type="number"] {
     font-size: 14px;
-    color: black; /* Cor da escrita */
+    color: black;
+    /* Cor da escrita */
     padding-left: 3px;
     border: none;
     border-bottom: 2px solid #a5a2a2;
     outline: none;
     width: 100%;
-    height: 25px; /* Tamanho INPUT */
+    height: 25px;
+    /* Tamanho INPUT */
     background-color: transparent;
 }
 
 .label {
     transition: all 0.3s ease;
-    color: #7D7F7C; /* Cor da label antes do foco */
+    color: #7D7F7C;
+    /* Cor da label antes do foco */
     position: absolute;
     top: 0;
     left: 0;
@@ -544,22 +586,22 @@ html{
 }
 
 /* A label sobe quando o input está focado */
-.input-container input[type="text"]:focus ~ .label,
-.input-container input[type="password"]:focus ~ .label,
-.input-container input[type="tel"]:focus ~ .label,
-.input-container input[type="email"]:focus ~ .label,
-.input-container input[type="number"]:focus ~ .label {
+.input-container input[type="text"]:focus~.label,
+.input-container input[type="password"]:focus~.label,
+.input-container input[type="tel"]:focus~.label,
+.input-container input[type="email"]:focus~.label,
+.input-container input[type="number"]:focus~.label {
     top: -20px;
     color: #3C4142;
     opacity: 1;
 }
 
 /* A label desaparece apenas quando o campo está preenchido */
-.input-container input[type="text"]:valid ~ .label,
-.input-container input[type="password"]:valid ~ .label,
-.input-container input[type="tel"]:valid ~ .label,
-.input-container input[type="email"]:valid ~ .label,
-.input-container input[type="number"]:valid ~ .label {
+.input-container input[type="text"]:valid~.label,
+.input-container input[type="password"]:valid~.label,
+.input-container input[type="tel"]:valid~.label,
+.input-container input[type="email"]:valid~.label,
+.input-container input[type="number"]:valid~.label {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -570,9 +612,11 @@ html{
     left: -7px;
     height: 2px;
     width: 102%;
-    background-color: rgb(58,74,106); /* Linha de baixo */
+    background-color: rgb(58, 74, 106);
+    /* Linha de baixo */
     transform: scaleX(0);
-    transition: 1s; /* Adicionado para transição suave */
+    transition: 1s;
+    /* Adicionado para transição suave */
 }
 
 .input-container .sideline {
@@ -581,7 +625,8 @@ html{
     right: 26px;
     height: 2px;
     width: 12%;
-    background-color: rgb(241,212,58); /* Linha da esquerda */
+    background-color: rgb(241, 212, 58);
+    /* Linha da esquerda */
     transform: scaleX(0);
     rotate: 90deg;
     transition: 1s;
@@ -593,7 +638,8 @@ html{
     left: -8px;
     height: 2px;
     width: 102%;
-    background-color: rgb(35,178,218); /* Linha de cima */
+    background-color: rgb(35, 178, 218);
+    /* Linha de cima */
     transform: scaleX(0);
     transition: 1s;
 }
@@ -604,42 +650,43 @@ html{
     left: 273px;
     height: 2px;
     width: 12%;
-    background-color: rgb(247,27,13); /* Linha da direita */
+    background-color: rgb(247, 27, 13);
+    /* Linha da direita */
     transform: scaleX(0);
     rotate: 90deg;
     transition: 1s;
 }
 
 /* Mantém as linhas coloridas somente durante o foco */
-.input-container input[type="text"]:focus ~ .underline,
-.input-container input[type="password"]:focus ~ .underline,
-.input-container input[type="tel"]:focus ~ .underline,
-.input-container input[type="email"]:focus ~ .underline,
-.input-container input[type="number"]:focus ~ .underline {
+.input-container input[type="text"]:focus~.underline,
+.input-container input[type="password"]:focus~.underline,
+.input-container input[type="tel"]:focus~.underline,
+.input-container input[type="email"]:focus~.underline,
+.input-container input[type="number"]:focus~.underline {
     transform: scaleX(1);
 }
 
-.input-container input[type="text"]:focus ~ .sideline,
-.input-container input[type="password"]:focus ~ .sideline,
-.input-container input[type="tel"]:focus ~ .sideline,
-.input-container input[type="email"]:focus ~ .sideline,
-.input-container input[type="number"]:focus ~ .sideline {
+.input-container input[type="text"]:focus~.sideline,
+.input-container input[type="password"]:focus~.sideline,
+.input-container input[type="tel"]:focus~.sideline,
+.input-container input[type="email"]:focus~.sideline,
+.input-container input[type="number"]:focus~.sideline {
     transform: scaleX(1);
 }
 
-.input-container input[type="text"]:focus ~ .upperline,
-.input-container input[type="password"]:focus ~ .upperline,
-.input-container input[type="tel"]:focus ~ .upperline,
-.input-container input[type="email"]:focus ~ .upperline,
-.input-container input[type="number"]:focus ~ .upperline {
+.input-container input[type="text"]:focus~.upperline,
+.input-container input[type="password"]:focus~.upperline,
+.input-container input[type="tel"]:focus~.upperline,
+.input-container input[type="email"]:focus~.upperline,
+.input-container input[type="number"]:focus~.upperline {
     transform: scaleX(1);
 }
 
-.input-container input[type="text"]:focus ~ .line,
-.input-container input[type="password"]:focus ~ .line,
-.input-container input[type="tel"]:focus ~ .line,
-.input-container input[type="email"]:focus ~ .line,
-.input-container input[type="number"]:focus ~ .line {
+.input-container input[type="text"]:focus~.line,
+.input-container input[type="password"]:focus~.line,
+.input-container input[type="tel"]:focus~.line,
+.input-container input[type="email"]:focus~.line,
+.input-container input[type="number"]:focus~.line {
     transform: scaleX(1);
 }
 
@@ -661,7 +708,7 @@ button:before {
     display: inline-block;
     height: 1px;
     margin-right: 10px;
-    transition: all .42s cubic-bezier(.25,.8,.25,1);
+    transition: all .42s cubic-bezier(.25, .8, .25, 1);
     width: 0;
 }
 
@@ -670,12 +717,523 @@ button:hover:before {
     width: 3rem;
 }
 
-button a{
-    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+button a {
+    font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 14px;
     font-weight: 700;
     line-height: 1.5;
     text-decoration: none;
     text-transform: uppercase;
     color: #3C4142;
+}
+
+
+
+
+
+
+
+
+/*MAIN*/
+
+.container {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    height: auto;
+    width: 100%;
+
+    margin-top: 80px;
+
+    background-color: #FDFDFE;
+}
+
+
+
+.categoria {
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 25em;
+    width: 75%;
+
+    margin-top: 15px;
+
+    border-radius: 15px;
+
+
+    /*& .titulo{
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      height: 15%;
+      width: 100%;
+
+      color: #373737;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 15px;
+      font-weight: bolder;
+
+      border-radius: 5px;
+    }*/
+
+    & .box-categoria {
+        display: flex;
+
+        flex-wrap: wrap;
+        gap: 3px;
+
+        height: 75%;
+        width: 100%;
+
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+
+        & .item {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            flex: 1 1 calc(25% - 10px);
+            /* 4 itens por linha */
+            height: 48%;
+
+            box-sizing: border-box;
+            /* Inclui bordas no cálculo de tamanho */
+
+            background-color: #f1d43a;
+
+            & img {
+                max-width: 55%;
+                max-height: 55%;
+                width: 30%;
+            }
+        }
+
+        &
+
+            /* Primeiros itens de cada linha */
+        .item:nth-child(4n+1) {
+            border-radius: 10px 0 0 10px;
+            /* Arredonda lado esquerdo */
+        }
+
+        /* Últimos itens de cada linha */
+        .item:nth-child(4n) {
+            border-radius: 0 10px 10px 0;
+            /* Arredonda lado direito */
+        }
+    }
+}
+
+
+/*Adicionando o Hover de cada Categoria*/
+
+.item.item:nth-child(1):hover {
+    background-image: url(../../Image/HoverCatLego.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 1s;
+}
+
+.item.item:nth-child(2):hover {
+    background-image: url(../../Image/HoverCatMarvel.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 1s;
+}
+
+.item.item:nth-child(3):hover {
+    background-image: url(../../Image/HoverCatBabyAlive.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 1s;
+}
+
+
+.item.item:nth-child(4):hover {
+    background-image: url(../../Image/HoverCatBarbie.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 1s;
+}
+
+.item.item:nth-child(5):hover {
+    background-image: url(../../Image/HoverCatDisney.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 1s;
+}
+
+.item.item:nth-child(6):hover {
+    background-image: url(../../Image/HoverCatNerf.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 1s;
+}
+
+.item.item:nth-child(7):hover {
+    background-image: url(../../Image/HoverCarRealBabyDolls.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 1s;
+}
+
+
+.item.item:nth-child(8):hover {
+    background-image: url(../../Image/HoverCatDc.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 1s;
+}
+
+
+
+
+
+
+/*Fim Da categoria*/
+
+
+/*Inicio dos produtos a serem Listados*/
+.main-produto {
+    display: flex;
+
+    justify-content: space-evenly;
+
+    flex-wrap: wrap;
+
+    height: auto;
+    width: 75%;
+
+    background-color: #fafafa;
+    /*#43597c*/
+    border-radius: 10px;
+    background-size: cover;
+}
+
+
+
+
+/*CARD DO PRODUTO*/
+.card {
+    --font-color: #323232;
+    --font-color-sub: #666;
+    --bg-color: #fff;
+    --main-color: #323232;
+    --main-focus: #2d8cf0;
+    width: 25%;
+    height: 350px;
+    margin-top: 60px;
+    background: var(--bg-color);
+;
+
+    background-color: whitesmoke;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card-img {
+    display: flex;
+
+
+    justify-content: center;
+
+    height: 130px;
+    width: 100%;
+
+    & img {
+        height: 100%;
+        width: 60%;
+    }
+}
+
+
+.card-subtitle {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--font-color-sub);
+}
+
+.card-divider {
+    width: 100%;
+    border: 1px solid #373737;
+    border-radius: 50px;
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-price {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--font-color);
+}
+
+.card-price span {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--font-color-sub);
+}
+
+.card-btn {
+    height: 35px;
+    background: var(--bg-color);
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    padding: 0 15px;
+    transition: all 0.3s;
+}
+
+.card-btn svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--main-color);
+    transition: all 0.3s;
+}
+
+.card-img:hover {
+    transform: translateY(-3px);
+}
+
+.card-btn:hover {
+    border: 2px solid #33B864;
+}
+
+.card-btn:hover svg {
+    fill: #33B864;
+}
+
+.card-btn:active {
+    transform: translateY(3px);
+}
+
+
+
+
+/*PopUp personalizado do Carrinho de Conpra, o PopUp de Login o seu css esta vindo do Componente*/
+
+#popupContainer {
+
+    & .popup-content {
+        width: 35em;
+        height: 27em;
+
+        & .container-carrinho::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
+
+        & .container-carrinho {
+            height: 300px;
+            width: 90%;
+
+            overflow: auto;
+
+
+            & .item-carrinho {
+                display: flex;
+
+                align-items: center;
+
+                height: 140px;
+                width: 100%;
+
+                margin-top: 20px;
+
+                & .imagem {
+                    display: flex;
+
+                    align-items: center;
+                    justify-content: center;
+
+                    height: 90%;
+                    width: 30%;
+
+                    & img {
+                        height: 90%;
+                        width: 90%;
+                    }
+                }
+
+                & .descricao {
+                    display: flex;
+                    flex-direction: column;
+
+                    justify-content: space-around;
+                    align-items: center;
+
+                    height: 90%;
+                    width: 70%;
+                    font-family: 'Courier New', Courier, monospace;
+                }
+
+            }
+
+        }
+    }
+}
+
+.botao-compra {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 60px;
+    width: 90%;
+}
+
+/*CSS BOTAO*/
+/*Configuração do Botão*/
+.botao {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    width: 120px;
+    height: 30px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+
+    color: white;
+    background-color: #343837;
+
+    border: none;
+    border-radius: .6rem;
+
+    position: relative;
+
+    cursor: pointer;
+    overflow: hidden;
+
+    & a {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.botao span:not(:nth-child(6)) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transition: .6s ease;
+}
+
+#button1 span:not(:nth-child(6)) {
+    background-color: #32BF84;
+}
+
+
+
+
+.botao span:nth-child(6) {
+    position: relative;
+}
+
+.botao span:nth-child(1) {
+    transform: translate(-3.3em, -4em);
+}
+
+.botao span:nth-child(2) {
+    transform: translate(-6em, 1.3em);
+}
+
+.botao span:nth-child(3) {
+    transform: translate(-.2em, 1.8em);
+}
+
+.botao span:nth-child(4) {
+    transform: translate(3.5em, 1.4em);
+}
+
+.botao span:nth-child(5) {
+    transform: translate(3.5em, -3.8em);
+}
+
+.botao:hover span:not(:nth-child(6)) {
+    transform: translate(-50%, -50%) scale(4);
+    transition: 1.5s ease;
+}
+
+
+
+
+
+/*Input number de .descricao*/
+
+.number-control {
+    display: flex;
+    align-items: center;
+}
+
+.number-left::before,
+.number-right::after {
+    content: attr(data-content);
+    background-color: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    width: 20px;
+    color: white;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.number-left::before {
+    content: "-";
+}
+
+.number-right::after {
+    content: "+";
+}
+
+.number-quantity {
+    padding: 0.25rem;
+    border: 0;
+    width: 50px;
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.number-left:hover::before,
+.number-right:hover::after {
+    background-color: #666666;
 }
